@@ -234,13 +234,13 @@ def main():
 
     if args.task_type == 'Distribution':
 
-        predict = outputs.tolist()
+        predict = outputs.exp().tolist()
 
         df_test_save = pd.DataFrame()
         labels = test_label.tolist()
         df_test_seq = pd.read_csv('Sequential_Peptides/test_seqs_dist.csv')
         df_test_save['feature'] = df_test_seq['Feature']
-        df_test_save['predict'] = predict.exp()
+        df_test_save['predict'] = predict
         df_test_save['label'] = labels
         
         kl_divergences = F.kl_div(outputs, test_label, reduction='none') 
