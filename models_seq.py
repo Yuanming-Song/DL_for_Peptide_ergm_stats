@@ -178,6 +178,8 @@ class Classifier(nn.Module):
             last_layer = 1
         elif args.task_type == 'Classification':
             last_layer = 2
+        elif args.task_type == 'Distribution':
+            last_layer = args.dist_dim
 
         hidden_layer = [512,256,64,32,last_layer]
 
@@ -212,6 +214,8 @@ class Classifier(nn.Module):
         elif self.args.task_type == 'Regression':
             # return y
             return self.sigmoid(y)*(self.args.max-self.args.min)+self.args.min
+        elif self.args.task_type == 'Distribution':
+            return F.log_softmax(y, dim=-1) 
 
 class Transformer(nn.Module):
     def __init__(self,args):
@@ -234,7 +238,7 @@ class Transformer(nn.Module):
 
 class LSTM(nn.Module):
     """
-        Parametersï¼?
+        Parameters
         - input_size: feature size
         - hidden_size: number of hidden units
         - output_size: number of output
@@ -265,7 +269,7 @@ class LSTM(nn.Module):
 
 class BidirectionalLSTM(nn.Module):
     """
-        Parametersï¼?
+        Parametersï¿½?
         - input_size: feature size
         - hidden_size: number of hidden units
         - output_size: number of output

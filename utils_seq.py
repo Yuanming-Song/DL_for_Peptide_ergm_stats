@@ -42,3 +42,12 @@ def accuracy(output, labels):
     correct = preds.eq(labels).double()
     correct = correct.sum()
     return correct / len(labels)
+
+def process_dist_labels(df, label_col):
+    raw_scores = np.array([np.array([float(i) for i in x.split(',')]) for x in df[label_col]])
+    raw_scores = torch.tensor(raw_scores)
+    #raw_scores = torch.Tensor(df[label_col].apply(lambda x: np.array([float(i) for i in x.split(',')])))
+    labels = raw_scores / raw_scores.sum(dim=1, keepdim=True)  # Normalize
+    labels += 1e-8  # Avoid zeros
+    labels /= labels.sum(dim=1, keepdim=True)  # Renormalize
+    return labels

@@ -11,10 +11,11 @@ import argparse
 import os
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--task_type', type=str, default='Classification',
-                    choices=['Classification','Regression'])
+parser.add_argument('--task_type', type=str, default='Distribution',
+                    choices=['Classification','Regression','Distribution'])
+parser.add_argument('--dist_dim', type=int, default=3, help='Dimension of probability distribution.')
 parser.add_argument('--seed', type=int, default=5, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=100,
+parser.add_argument('--epochs', type=int, default=5,
                     help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.2,
                     help='Initial learning rate.')
@@ -23,9 +24,10 @@ parser.add_argument('--lr', type=float, default=0.2,
 parser.add_argument('--src_vocab_size', type=int, default=21) # number of amino acids + 'Empty'
 parser.add_argument('--src_len', type=int, default=10)
 # parser.add_argument('--embed_dim', type=int, default=256)
-parser.add_argument('--batch_size', type=int, default=1024)
+parser.add_argument('--batch_size', type=int, default=2)
 parser.add_argument('--model', type=str, default='Transformer',choices=['RNN','LSTM','Bi-LSTM','Transformer'])
 parser.add_argument('--model_path', type=str, default='model_val_best.pt')
+parser.add_argument('--base_dir', type = str, default='/Users/mdai/Documents/Projects/dl_song/')
 
 args = parser.parse_args()
 
@@ -39,9 +41,9 @@ if args.model == 'Transformer':
 else:
     args.d_model = 512  # Embedding size
 
-args.model_path='{}_lr_{}_bs_{}.pt'.format(args.model,args.lr,args.batch_size)
+args.model_path=os.path.join(args.base_dir,'{}_lr_{}_bs_{}.pt'.format(args.model,args.lr,args.batch_size))
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'    
+device = 'cpu' #'cuda' if torch.cuda.is_available() else 'cpu'    
 random.seed(args.seed)
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
@@ -63,6 +65,19 @@ def main():
         train_label = torch.Tensor(np.array(df_train["Label"])).unsqueeze(1).float()
         valid_label = torch.Tensor(np.array(df_valid["Label"])).unsqueeze(1).float().to(device)
         test_label = torch.Tensor(np.array(df_test["Label"])).unsqueeze(1).float().to(device)
+    elif args.task_type == 'Distribution':
+        df_train = pd.read_csv('Sequential_Peptides/train_seqs_dist.csv')
+        df_valid = pd.read_csv('Sequential_Peptides/valid_seqs_dist.csv')
+        df_test = pd.read_csv('Sequential_Peptides/test_seqs_dist.csv')
+        train_label = process_dist_labels(df_train, 'Label')
+        valid_label = process_dist_labels(df_valid, 'Label').to(device)
+        test_label = process_dist_labels(df_test, 'Label').to(device)
+
+        assert train_label.shape[-1] == valid_label.shape[-1] == test_label.shape[-1] == args.dist_dim
+    
+    output_directory = 'results_seq_dist'
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
     
     args.max = train_label.max().item()
     args.min = train_label.min().item()
@@ -79,7 +94,9 @@ def main():
 
     valid_mse_saved = 100
     valid_acc_saved = 0
+    valid_kl_saved = 0
     loss_mse = torch.nn.MSELoss()
+    loss_kl = nn.KLDivLoss(reduction='batchmean')
 
     if args.model == 'Transformer':
         model = Transformer(args).to(device)
@@ -106,6 +123,8 @@ def main():
                 loss = F.nll_loss(outputs, labels)
             elif args.task_type == 'Regression':
                 loss = loss_mse(outputs, labels)
+            elif args.task_type == "Distribution":
+                loss = loss_kl(outputs, labels)
 
             # print('Epoch:','%04d' % (epoch+1), 'loss =','{:.6f}'.format(loss))
 
@@ -132,6 +151,16 @@ def main():
                     print('Epoch:',epoch+1)
                     print('Valid Performance:',valid_mse)
                     torch.save(model.state_dict(),args.model_path)
+            
+            elif args.task_type == "Distribution":
+                valid_kl = loss_kl(predict, valid_label)
+                #valid_log_likelihood= (predict * valid_label).sum(dim=1).mean()
+                if valid_kl_saved < valid_kl:
+                    valid_kl_saved = valid_kl
+                    print('Epoch:',epoch+1)
+                    print('Valid Performance:',valid_kl)
+                    torch.save(model.state_dict(),args.model_path)
+
     
     predict = []
 
@@ -149,6 +178,7 @@ def main():
     
     outputs = model_load(test_enc_inputs)
 
+    
     if args.task_type == 'Classification':
         
         predict_test = outputs.max(1)[1].type_as(test_label)
@@ -167,8 +197,8 @@ def main():
         df_test_save['Precision'] = precision_score(test_label.cpu(),predict_test.cpu().detach())
         df_test_save['Recall'] = recall_score(test_label.cpu(),predict_test.cpu().detach())
         df_test_save['F1-score'] = f1_score(test_label.cpu(),predict_test.cpu().detach())
-        
-        df_test_save.to_csv('results_seq/Test_cla_{}_Acc_{}_lr_{}_bs_{}.csv'.format(args.model,test_acc,args.lr,args.batch_size))
+
+        df_test_save.to_csv(os.path.join(output_directory, 'Test_cla_{}_Acc_{}_lr_{}_bs_{}.csv'.format(args.model,test_acc,args.lr,args.batch_size)))
 
     if args.task_type == 'Regression':
 
@@ -200,7 +230,22 @@ def main():
         df_test_save['MSE_ave'] = MSE
         df_test_save['MAE_ave'] = MAE
         df_test_save['R2'] = R2
-        df_test_save.to_csv('results_seq/Test_reg_{}_MAE_{}_lr_{}_bs_{}.csv'.format(args.model,MAE,args.lr,args.batch_size))
+        df_test_save.to_csv(os.path.join(output_directory,'Test_reg_{}_MAE_{}_lr_{}_bs_{}.csv'.format(args.model,MAE,args.lr,args.batch_size)))
+
+    if args.task_type == 'Distribution':
+
+        predict = outputs.tolist()
+
+        df_test_save = pd.DataFrame()
+        labels = test_label.tolist()
+        df_test_seq = pd.read_csv('Sequential_Peptides/test_seqs_dist.csv')
+        df_test_save['feature'] = df_test_seq['Feature']
+        df_test_save['predict'] = predict
+        df_test_save['label'] = labels
+        
+        kl_divergences = F.kl_div(outputs, test_label, reduction='none') 
+        df_test_save['kl_divergences'] = kl_divergences.sum(dim=1).detach().numpy()
+        df_test_save.to_csv(os.path.join(output_directory,'Test_reg_{}_lr_{}_bs_{}.csv'.format(args.model,args.lr,args.batch_size)))
 
     os.remove(args.model_path)
 
