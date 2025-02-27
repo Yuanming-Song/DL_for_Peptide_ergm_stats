@@ -27,7 +27,7 @@ parser.add_argument('--src_len', type=int, default=10)
 parser.add_argument('--batch_size', type=int, default=2)
 parser.add_argument('--model', type=str, default='Transformer',choices=['RNN','LSTM','Bi-LSTM','Transformer'])
 parser.add_argument('--model_path', type=str, default='model_val_best.pt')
-parser.add_argument('--base_dir', type = str, default='/Users/mdai/Documents/Projects/dl_song/')
+parser.add_argument('--base_dir', type = str, default='/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide')
 
 args = parser.parse_args()
 
@@ -141,6 +141,7 @@ def main():
                 if valid_acc_saved < valid_acc:
                     valid_acc_saved = valid_acc
                     print('Epoch:',epoch+1)
+                    print('Task Type:', args.task_type)
                     print('Valid Performance:',valid_acc.item())
                     torch.save(model.state_dict(),args.model_path)
 
@@ -149,6 +150,7 @@ def main():
                 if valid_mse_saved > valid_mse:
                     valid_mse_saved = valid_mse
                     print('Epoch:',epoch+1)
+                    print('Task Type:', args.task_type)
                     print('Valid Performance:',valid_mse)
                     torch.save(model.state_dict(),args.model_path)
             
@@ -157,6 +159,7 @@ def main():
                 #valid_log_likelihood= (predict * valid_label).sum(dim=1).mean()
                 if valid_kl_saved < valid_kl:
                     valid_kl_saved = valid_kl
+                    print('Task Type:', args.task_type)
                     print('Epoch:',epoch+1)
                     print('Valid Performance:',valid_kl)
                     torch.save(model.state_dict(),args.model_path)
