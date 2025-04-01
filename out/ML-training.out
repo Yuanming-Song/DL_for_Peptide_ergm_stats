@@ -11,100 +11,174 @@ no change     /opt/apps/anaconda/2024.06/lib/python3.12/site-packages/xontrib/co
 no change     /opt/apps/anaconda/2024.06/etc/profile.d/conda.csh
 no change     /data/homezvol3/yuanmis1/.bashrc
 No action taken.
-valid_kl_saved 100
-Task Type: Distribution
-Epoch: 1
-Valid Performance: 1 tensor(3.4751, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(3.4751, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 2
-Valid Performance: 2 tensor(3.0393, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(3.0393, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 3
-Valid Performance: 3 tensor(2.7658, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(2.7658, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 4
-Valid Performance: 4 tensor(2.4176, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(2.4176, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 5
-Valid Performance: 5 tensor(2.1289, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(2.1289, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 6
-Valid Performance: 6 tensor(1.9670, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.9670, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 7
-Valid Performance: 7 tensor(1.9394, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.9394, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 8
-Valid Performance: 8 tensor(1.8827, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.8827, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 9
-Valid Performance: 9 tensor(1.8770, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.8770, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 10
-Valid Performance: 10 tensor(1.8192, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.8192, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 11
-Valid Performance: 11 tensor(1.8096, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.8096, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 12
-Valid Performance: 12 tensor(1.8023, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.8023, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-valid_kl_saved tensor(1.8023, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 14
-Valid Performance: 14 tensor(1.7822, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.7822, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 15
-Valid Performance: 15 tensor(1.7717, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.7717, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-valid_kl_saved tensor(1.7717, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 17
-Valid Performance: 17 tensor(1.7566, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.7566, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 18
-Valid Performance: 18 tensor(1.7555, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.7555, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-valid_kl_saved tensor(1.7555, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 20
-Valid Performance: 20 tensor(1.7455, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-valid_kl_saved tensor(1.7455, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-valid_kl_saved tensor(1.7455, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Task Type: Distribution
-Epoch: 22
-Valid Performance: 22 tensor(1.7445, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16.pt
-######## Final Epoch: 22
-valid_kl_saved tensor(1.7445, device='cuda:0', dtype=torch.float64, grad_fn=<DivBackward0>)
-Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_lr_0.2_bs_16_best.pt
+Epoch 1/100
+Training Loss: 1.840500
+Validation CE: 1.767096
+Max Prob Error: 0.824610
+Learning Rate: 0.090451
+Saving best model...
+Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/dimer_Transformer_20250331_192430_best.pt
+Epoch 2/100
+Training Loss: 1.866363
+Validation CE: 1.770179
+Max Prob Error: 0.816962
+Learning Rate: 0.065451
+Early stopping counter: 1/20
+Epoch 3/100
+Training Loss: 1.711487
+Validation CE: 1.768727
+Max Prob Error: 0.890021
+Learning Rate: 0.034550
+Early stopping counter: 2/20
+Epoch 4/100
+Training Loss: 1.699803
+Validation CE: 1.761280
+Max Prob Error: 0.885373
+Learning Rate: 0.009550
+Saving best model...
+Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/dimer_Transformer_20250331_192430_best.pt
+Epoch 5/100
+Training Loss: 1.698503
+Validation CE: 1.762986
+Max Prob Error: 0.882168
+Learning Rate: 0.100000
+Early stopping counter: 1/20
+Epoch 6/100
+Training Loss: 7.649193
+Validation CE: 1.761193
+Max Prob Error: 0.901234
+Learning Rate: 0.097553
+Saving best model...
+Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/dimer_Transformer_20250331_192430_best.pt
+Epoch 7/100
+Training Loss: 1.812046
+Validation CE: 1.755834
+Max Prob Error: 0.884333
+Learning Rate: 0.090451
+Saving best model...
+Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/dimer_Transformer_20250331_192430_best.pt
+Epoch 8/100
+Training Loss: 1.794747
+Validation CE: 1.761573
+Max Prob Error: 0.904091
+Learning Rate: 0.079389
+Early stopping counter: 1/20
+Epoch 9/100
+Training Loss: 1.817314
+Validation CE: 1.774964
+Max Prob Error: 0.879077
+Learning Rate: 0.065451
+Early stopping counter: 2/20
+Epoch 10/100
+Training Loss: 1.704858
+Validation CE: 1.763372
+Max Prob Error: 0.892673
+Learning Rate: 0.050001
+Early stopping counter: 3/20
+Epoch 11/100
+Training Loss: 1.700424
+Validation CE: 1.762688
+Max Prob Error: 0.892293
+Learning Rate: 0.034550
+Early stopping counter: 4/20
+Epoch 12/100
+Training Loss: 1.699916
+Validation CE: 1.762905
+Max Prob Error: 0.878972
+Learning Rate: 0.020612
+Early stopping counter: 5/20
+Epoch 13/100
+Training Loss: 1.699137
+Validation CE: 1.764474
+Max Prob Error: 0.880095
+Learning Rate: 0.009550
+Early stopping counter: 6/20
+Epoch 14/100
+Training Loss: 1.698785
+Validation CE: 1.762911
+Max Prob Error: 0.878153
+Learning Rate: 0.002448
+Early stopping counter: 7/20
+Epoch 15/100
+Training Loss: 1.693044
+Validation CE: 1.757926
+Max Prob Error: 0.886404
+Learning Rate: 0.100000
+Early stopping counter: 8/20
+Epoch 16/100
+Training Loss: 12.547029
+Validation CE: 1.774132
+Max Prob Error: 0.893302
+Learning Rate: 0.099384
+Early stopping counter: 9/20
+Epoch 17/100
+Training Loss: 1.873309
+Validation CE: 1.829379
+Max Prob Error: 1.000000
+Learning Rate: 0.097553
+Early stopping counter: 10/20
+Epoch 18/100
+Training Loss: 1.886530
+Validation CE: 1.782579
+Max Prob Error: 0.959418
+Learning Rate: 0.094550
+Early stopping counter: 11/20
+Epoch 19/100
+Training Loss: 1.785404
+Validation CE: 1.763108
+Max Prob Error: 0.910290
+Learning Rate: 0.090451
+Early stopping counter: 12/20
+Epoch 20/100
+Training Loss: 1.702226
+Validation CE: 1.766213
+Max Prob Error: 0.890862
+Learning Rate: 0.085355
+Early stopping counter: 13/20
+Epoch 21/100
+Training Loss: 2.275214
+Validation CE: 1.764109
+Max Prob Error: 0.891913
+Learning Rate: 0.079389
+Early stopping counter: 14/20
+Epoch 22/100
+Training Loss: 1.701934
+Validation CE: 1.763824
+Max Prob Error: 0.889816
+Learning Rate: 0.072700
+Early stopping counter: 15/20
+Epoch 23/100
+Training Loss: 1.928714
+Validation CE: 1.766706
+Max Prob Error: 0.871415
+Learning Rate: 0.065451
+Early stopping counter: 16/20
+Epoch 24/100
+Training Loss: 1.753894
+Validation CE: 1.764928
+Max Prob Error: 0.855629
+Learning Rate: 0.057822
+Early stopping counter: 17/20
+Epoch 25/100
+Training Loss: 1.702405
+Validation CE: 1.762505
+Max Prob Error: 0.882543
+Learning Rate: 0.050001
+Early stopping counter: 18/20
+Epoch 26/100
+Training Loss: 1.826972
+Validation CE: 1.764971
+Max Prob Error: 0.878703
+Learning Rate: 0.042179
+Early stopping counter: 19/20
+Epoch 27/100
+Training Loss: 1.703084
+Validation CE: 1.760266
+Max Prob Error: 0.895921
+Learning Rate: 0.034550
+Early stopping counter: 20/20
+Early stopping triggered after 27 epochs
+######## Final Epoch: 27
+Best validation CE: 1.755833625793457
+Model saved at: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/dimer_Transformer_20250331_192430_best.pt
+Training logs saved at: training_logs/dimer_Transformer_20250331_192430_training_log.csv

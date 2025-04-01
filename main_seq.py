@@ -17,7 +17,7 @@ parser.add_argument('--dist_dim', type=int, default=3, help='Dimension of probab
 parser.add_argument('--seed', type=int, default=5, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=5,
                     help='Number of epochs to train.')
-parser.add_argument('--lr', type=float, default=0.2,
+parser.add_argument('--lr', type=float, default=0.5,
                     help='Initial learning rate.')
 # parser.add_argument('--hidden', type=int, default=256,
                     # help='Number of hidden units.')

@@ -1,0 +1,362 @@
+no change     /opt/apps/anaconda/2024.06/condabin/conda
+no change     /opt/apps/anaconda/2024.06/bin/conda
+no change     /opt/apps/anaconda/2024.06/bin/conda-env
+no change     /opt/apps/anaconda/2024.06/bin/activate
+no change     /opt/apps/anaconda/2024.06/bin/deactivate
+no change     /opt/apps/anaconda/2024.06/etc/profile.d/conda.sh
+no change     /opt/apps/anaconda/2024.06/etc/fish/conf.d/conda.fish
+no change     /opt/apps/anaconda/2024.06/shell/condabin/Conda.psm1
+no change     /opt/apps/anaconda/2024.06/shell/condabin/conda-hook.ps1
+no change     /opt/apps/anaconda/2024.06/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /opt/apps/anaconda/2024.06/etc/profile.d/conda.csh
+no change     /data/homezvol3/yuanmis1/.bashrc
+No action taken.
+
+==================================================
+TRAINING CONFIGURATION
+==================================================
+
+Model Architecture:
+  Model Type: Transformer
+  Embedding Dim: 512
+  Feed Forward Dim: 2048
+  Number of Layers: 4
+  Number of Heads: 8
+  Dropout Rate: 0.2
+
+Training Parameters:
+  Epochs: 300
+  Batch Size: 64
+  Learning Rate: 0.0005
+  Weight Decay: 0.005
+  Gradient Clipping: 0.5
+  Warmup Steps: 500
+  Early Stopping Patience: 30
+
+Data Parameters:
+  Distribution Dimension: 6
+  Source Length: 10
+  Vocabulary Size: 21
+  Random Seed: 5
+  Device: cuda
+==================================================
+
+Raw train labels: 0    0.135036496350365,0.14963503649635,0.086678832...
+1    0.00478468899521531,0.050580997949419,0.408065...
+2    0,0,0.246865203761755,0.524294670846395,0.2288...
+3    0.00748299319727891,0.00136054421768707,0.1693...
+4    0.0645161290322581,0.162903225806452,0.1177419...
+Name: Label, dtype: object
+Raw valid labels: 0    0,0.0175131348511384,0.182136602451839,0.35989...
+1    0,0.023876404494382,0.141151685393258,0.693117...
+2    0.131656804733728,0,0.267011834319527,0.446005...
+3    0,0,0,0.745310957551826,0.107601184600197,0.14...
+4    0.0717875089734386,0.24934194783441,0.43359655...
+Name: Label, dtype: object
+Raw test labels: 0          0,0,0,0,0.730232558139535,0.269767441860465
+1    0.245145631067961,0,0,0.298543689320388,0.2257...
+2    0,0,0.385286783042394,0,0.613466334164589,0.00...
+3          0,0,0,0.820683903252711,0.179316096747289,0
+4    0.421290322580645,0.213225806451613,0.14,0.110...
+Name: Label, dtype: object
+Processed train labels: tensor([[1.3504e-01, 1.4964e-01, 8.6679e-02, 2.7281e-01, 2.6734e-01, 8.8504e-02],
+        [4.7847e-03, 5.0581e-02, 4.0807e-01, 1.5038e-01, 3.6774e-01, 1.8455e-02],
+        [2.0000e-08, 2.0000e-08, 2.4687e-01, 5.2429e-01, 2.2884e-01, 2.0000e-08],
+        [7.4830e-03, 1.3606e-03, 1.6939e-01, 4.5918e-01, 3.6190e-01, 6.8029e-04],
+        [6.4516e-02, 1.6290e-01, 1.1774e-01, 4.8871e-01, 6.4516e-03, 1.5968e-01]])
+Processed valid labels: tensor([[2.0000e-08, 1.7513e-02, 1.8214e-01, 3.5989e-01, 3.7653e-01, 6.3923e-02],
+        [2.0000e-08, 2.3876e-02, 1.4115e-01, 6.9312e-01, 1.4115e-01, 7.0227e-04],
+        [1.3166e-01, 2.0000e-08, 2.6701e-01, 4.4601e-01, 6.5089e-02, 9.0237e-02],
+        [2.0000e-08, 2.0000e-08, 2.0000e-08, 7.4531e-01, 1.0760e-01, 1.4709e-01],
+        [7.1788e-02, 2.4934e-01, 4.3360e-01, 2.3187e-01, 1.3400e-02, 2.0000e-08]],
+       device='cuda:0')
+Processed test labels: tensor([[2.0000e-08, 2.0000e-08, 2.0000e-08, 2.0000e-08, 7.3023e-01, 2.6977e-01],
+        [2.4515e-01, 2.0000e-08, 2.0000e-08, 2.9854e-01, 2.2573e-01, 2.3058e-01],
+        [2.0000e-08, 2.0000e-08, 3.8529e-01, 2.0000e-08, 6.1347e-01, 1.2469e-03],
+        [2.0000e-08, 2.0000e-08, 2.0000e-08, 8.2068e-01, 1.7932e-01, 2.0000e-08],
+        [4.2129e-01, 2.1323e-01, 1.4000e-01, 1.1032e-01, 1.0161e-01, 1.3548e-02]],
+       device='cuda:0')
+Epoch 1/300:
+  Train Loss: 0.478189
+  Valid KL: 0.451664
+  Max Prob Error: 0.999215
+  Avg Gradient Norm: 0.136182
+  Avg Parameter Norm: 133.397278
+  Learning Rate: 0.000357
+  ---
+Saved best model with Valid KL: 0.451664 at /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_KL_rebin_best_improved.pt
+Epoch 2/300:
+  Train Loss: 0.447071
+  Valid KL: 0.447949
+  Max Prob Error: 0.999996
+  Avg Gradient Norm: 0.191613
+  Avg Parameter Norm: 134.241531
+  Learning Rate: 0.000499
+  ---
+Saved best model with Valid KL: 0.447949 at /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/Transformer_KL_rebin_best_improved.pt
+Epoch 3/300:
+  Train Loss: 0.445607
+  Valid KL: 0.488544
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.202681
+  Avg Parameter Norm: 135.005569
+  Learning Rate: 0.000497
+  ---
+Epoch 4/300:
+  Train Loss: 0.444887
+  Valid KL: 0.448671
+  Max Prob Error: 0.999998
+  Avg Gradient Norm: 0.203699
+  Avg Parameter Norm: 135.495117
+  Learning Rate: 0.000496
+  ---
+Epoch 5/300:
+  Train Loss: 0.452169
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.178955
+  Avg Parameter Norm: 136.461166
+  Learning Rate: 0.000494
+  ---
+Epoch 6/300:
+  Train Loss: 0.444574
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.199821
+  Avg Parameter Norm: 137.338058
+  Learning Rate: 0.000492
+  ---
+Epoch 7/300:
+  Train Loss: 0.443665
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.176892
+  Avg Parameter Norm: 137.604691
+  Learning Rate: 0.000491
+  ---
+Epoch 8/300:
+  Train Loss: 0.442845
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.170079
+  Avg Parameter Norm: 137.857971
+  Learning Rate: 0.000489
+  ---
+Epoch 9/300:
+  Train Loss: 0.443012
+  Valid KL: 0.566939
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.159332
+  Avg Parameter Norm: 138.041260
+  Learning Rate: 0.000487
+  ---
+Epoch 10/300:
+  Train Loss: 0.442982
+  Valid KL: 0.566689
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.161441
+  Avg Parameter Norm: 138.420105
+  Learning Rate: 0.000486
+  ---
+Epoch 11/300:
+  Train Loss: 0.442790
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.154124
+  Avg Parameter Norm: 138.700592
+  Learning Rate: 0.000484
+  ---
+Epoch 12/300:
+  Train Loss: 0.442789
+  Valid KL: 0.485001
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.151875
+  Avg Parameter Norm: 139.205521
+  Learning Rate: 0.000482
+  ---
+Epoch 13/300:
+  Train Loss: 0.443109
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.151230
+  Avg Parameter Norm: 141.069305
+  Learning Rate: 0.000481
+  ---
+Epoch 14/300:
+  Train Loss: 0.442670
+  Valid KL: 0.561903
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.142216
+  Avg Parameter Norm: 141.737259
+  Learning Rate: 0.000479
+  ---
+Epoch 15/300:
+  Train Loss: 0.442109
+  Valid KL: 0.566939
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.132598
+  Avg Parameter Norm: 142.046661
+  Learning Rate: 0.000477
+  ---
+Epoch 16/300:
+  Train Loss: 0.443544
+  Valid KL: 0.566939
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.203523
+  Avg Parameter Norm: 145.554596
+  Learning Rate: 0.000476
+  ---
+Epoch 17/300:
+  Train Loss: 0.442496
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.139371
+  Avg Parameter Norm: 148.122482
+  Learning Rate: 0.000474
+  ---
+Epoch 18/300:
+  Train Loss: 0.442565
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.131094
+  Avg Parameter Norm: 149.306931
+  Learning Rate: 0.000472
+  ---
+Epoch 19/300:
+  Train Loss: 0.442512
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.130547
+  Avg Parameter Norm: 150.173599
+  Learning Rate: 0.000471
+  ---
+Epoch 20/300:
+  Train Loss: 0.442138
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.118724
+  Avg Parameter Norm: 150.641876
+  Learning Rate: 0.000469
+  ---
+Epoch 21/300:
+  Train Loss: 0.442423
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.114093
+  Avg Parameter Norm: 151.099075
+  Learning Rate: 0.000467
+  ---
+Epoch 22/300:
+  Train Loss: 0.442242
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.114862
+  Avg Parameter Norm: 152.858292
+  Learning Rate: 0.000466
+  ---
+Epoch 23/300:
+  Train Loss: 0.442031
+  Valid KL: 0.721911
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.112431
+  Avg Parameter Norm: 154.218018
+  Learning Rate: 0.000464
+  ---
+Epoch 24/300:
+  Train Loss: 0.442250
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.110629
+  Avg Parameter Norm: 154.956482
+  Learning Rate: 0.000462
+  ---
+Epoch 25/300:
+  Train Loss: 0.442022
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.112255
+  Avg Parameter Norm: 155.996078
+  Learning Rate: 0.000460
+  ---
+Epoch 26/300:
+  Train Loss: 0.441917
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.110651
+  Avg Parameter Norm: 156.963837
+  Learning Rate: 0.000459
+  ---
+Epoch 27/300:
+  Train Loss: 0.441785
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.108429
+  Avg Parameter Norm: 157.752792
+  Learning Rate: 0.000457
+  ---
+Epoch 28/300:
+  Train Loss: 0.441494
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.111144
+  Avg Parameter Norm: 159.195923
+  Learning Rate: 0.000455
+  ---
+Epoch 29/300:
+  Train Loss: 0.441521
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.101910
+  Avg Parameter Norm: 160.252838
+  Learning Rate: 0.000454
+  ---
+Epoch 30/300:
+  Train Loss: 0.441296
+  Valid KL: 0.566939
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.102870
+  Avg Parameter Norm: 161.475906
+  Learning Rate: 0.000452
+  ---
+Epoch 31/300:
+  Train Loss: 0.441714
+  Valid KL: 0.677634
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.108954
+  Avg Parameter Norm: 163.237045
+  Learning Rate: 0.000450
+  ---
+Epoch 32/300:
+  Train Loss: 0.441385
+  Valid KL: 0.561904
+  Max Prob Error: 1.000000
+  Avg Gradient Norm: 0.100334
+  Avg Parameter Norm: 164.273102
+  Learning Rate: 0.000449
+  ---
+Early stopping triggered after 32 epochs
+Test KL Divergence: 0.450533
+Training completed with the following parameters:
+----------------------------------------
+Model Architecture:
+  Model Type: Transformer
+  Embedding Dim: 512
+  Feed Forward Dim: 4
+  Number of Layers: 4
+  Number of Heads: 8
+  Dropout Rate: 0.2
+
+Training Parameters:
+  Epochs: 300
+  Batch Size: 64
+  Learning Rate: 0.0005
+  Weight Decay: 0.005
+  Gradient Clipping: 0.5
+  Warmup Steps: 500
+  Early Stopping Patience: 30
+
+Data Parameters:
+  Distribution Dimension: 6
+  Source Length: 10
+  Vocabulary Size: 21
+----------------------------------------
