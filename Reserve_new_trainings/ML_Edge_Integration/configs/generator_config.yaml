@@ -1,0 +1,51 @@
+data:
+  train_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/Sequential_Peptides_edges/ddedge_train_seqs.csv'
+  valid_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/Sequential_Peptides_edges/ddedge_valid_seqs.csv'
+  test_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/Sequential_Peptides_edges/ddedge_test_seqs.csv'
+  feature_col: 'Feature'
+  label_col: 'Label'
+
+model:
+  d_model: 512  # Embedding dimension (matching ML_ddEdge)
+  n_layers: 6   # Number of transformer layers
+  n_heads: 8    # Number of attention heads
+  d_ff: 2048    # Feed-forward network dimension (matching ML_ddEdge)
+  max_len: 10   # Maximum sequence length
+  dropout: 0.1  # Dropout rate
+  src_vocab_size: 21  # Number of amino acids + 'Empty'
+
+training:
+  batch_size: 1024  # Matching ML_ddEdge
+  epochs: 100
+  learning_rate: 0.2  # Matching ML_ddEdge for Transformer
+  patience: 10  # Early stopping patience
+  num_workers: 4  # DataLoader workers
+  model_save_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_ddEdge/models/ddedge_model.pt' 
+
+models:
+  ddedge:
+    model_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_ddEdge/models/Transformer_lr_0.2_bs_1024.pt'
+    type: 'Transformer'
+  edge_monomer:
+    model_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_Edge_monomer/models/Transformer_lr_0.2_bs_1024.pt'
+    type: 'Transformer'
+  edge_dimer:
+    model_path: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_Edge_dimer/models/Transformer_lr_0.2_bs_1024.pt'
+    type: 'Transformer'
+
+model_params:
+  d_model: 512  # Embedding dimension
+  n_layers: 6   # Number of transformer layers
+  n_heads: 8    # Number of attention heads
+  d_ff: 2048   # Feed-forward network dimension
+  max_len: 10  # Maximum sequence length
+  dropout: 0.1 # Dropout rate
+  src_vocab_size: 21  # Number of amino acids + 'Empty'
+
+integration:
+  method: 'weighted_sum'  # How to combine predictions from the three models
+  weights:
+    ddedge: 0.33
+    edge_monomer: 0.33
+    edge_dimer: 0.33
+  output_dir: '/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_Edge_Integration/results' 

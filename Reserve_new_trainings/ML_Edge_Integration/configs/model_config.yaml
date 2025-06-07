@@ -1,0 +1,42 @@
+# Model paths
+model_paths:
+  monomer: "../ML_dEdge_monomer/models/iteration1/Transformer_monomer_edges.pt"
+  dimer: "../ML_dEdge_dimer/models/iteration1/Transformer_dimer_edges.pt"
+
+# Generation parameters
+generation:
+  candidates_per_sequence: 5
+  min_sequence_length: 2
+  max_sequence_length: 4
+  required_residues:
+    - "C"  # Must contain exactly one cysteine
+  mutation_rate: 0.2  # Probability of mutating each position
+
+# Scoring parameters
+scoring:
+  weights:
+    monomer: 1.0
+    dimer: 1.0
+  metrics:
+    - type: "mse"
+      weight: 0.7
+    - type: "constraint_satisfaction"
+      weight: 0.3
+
+# Training parameters
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  max_epochs: 100
+  early_stopping_patience: 10
+
+# Hardware settings
+hardware:
+  device: "cuda"  # or "cpu"
+  num_workers: 4
+  
+# Logging
+logging:
+  log_dir: "logs"
+  save_predictions: true
+  save_frequency: 10  # Save every N epochs 

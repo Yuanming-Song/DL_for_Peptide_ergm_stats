@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\title{Conditional Sequence Generation Model for Edge Property-Guided Peptide Design}
+\author{ML-MD-Peptide Project}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This document describes a conditional generative model for peptide sequence design, which learns to generate sequences that satisfy desired edge properties in both monomer and dimer states.
+
+\section{Model Architecture}
+
+\subsection{Overview}
+The model follows a conditional autoregressive architecture:
+\begin{itemize}
+    \item Input: Target edge properties for both monomer and dimer states
+    \item Output: Probability distribution over amino acid sequences
+    \item Architecture: Transformer-based decoder with property conditioning
+\end{itemize}
+
+\subsection{Training Data}
+The model is trained on:
+\begin{itemize}
+    \item Peptide sequences from MD simulations
+    \item Corresponding edge properties:
+        \begin{itemize}
+            \item Monomer state properties
+            \item Dimer state properties
+        \end{itemize}
+    \item Property-sequence pairs from successful designs
+\end{itemize}
+
+\subsection{Model Components}
+
+\subsubsection{Property Encoder}
+Encodes target properties into a latent representation:
+\begin{equation}
+    z_{props} = E_{prop}([p_m, p_d])
+\end{equation}
+where:
+\begin{itemize}
+    \item $p_m$: Target monomer properties
+    \item $p_d$: Target dimer properties
+    \item $E_{prop}$: Property encoder network
+\end{itemize}
+
+\subsubsection{Sequence Decoder}
+Autoregressive transformer decoder that generates sequences:
+\begin{equation}
+    P(a_t|a_{<t}, z_{props}) = \text{Decoder}(a_{<t}, z_{props})
+\end{equation}
+where:
+\begin{itemize}
+    \item $a_t$: Amino acid at position $t$
+    \item $a_{<t}$: Previous amino acids
+    \item $z_{props}$: Encoded property conditions
+\end{itemize}
+
+\section{Training Process}
+
+\subsection{Loss Function}
+The model is trained with multiple objectives:
+\begin{equation}
+    \mathcal{L} = \mathcal{L}_{seq} + \lambda_m\mathcal{L}_{mono} + \lambda_d\mathcal{L}_{dimer}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\mathcal{L}_{seq}$: Sequence reconstruction loss
+    \item $\mathcal{L}_{mono}$: Monomer property prediction loss
+    \item $\mathcal{L}_{dimer}$: Dimer property prediction loss
+    \item $\lambda_m, \lambda_d$: Loss weighting coefficients
+\end{itemize}
+
+\subsection{Training Algorithm}
+\begin{algorithm}[H]
+\caption{Model Training}
+\begin{algorithmic}[1]
+\STATE Initialize model parameters $\theta$
+\WHILE{not converged}
+    \STATE Sample batch $(S, P_m, P_d)$ from training data
+    \STATE Encode properties: $z_{props} = E_{prop}([P_m, P_d])$
+    \STATE Generate sequence probabilities: $\hat{S} = \text{Decoder}(S_{<t}, z_{props})$
+    \STATE Compute losses $\mathcal{L}_{seq}, \mathcal{L}_{mono}, \mathcal{L}_{dimer}$
+    \STATE Update $\theta$ using combined loss $\mathcal{L}$
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+
+\section{Sequence Generation}
+
+\subsection{Generation Process}
+During inference:
+\begin{enumerate}
+    \item Encode desired properties $z_{props}$
+    \item Generate sequence autoregressively:
+        \begin{itemize}
+            \item Sample each amino acid based on conditional probabilities
+            \item Use temperature parameter to control diversity
+            \item Apply constraints (e.g., single cysteine requirement)
+        \end{itemize}
+    \item Validate generated sequences with edge predictors
+\end{enumerate}
+
+\subsection{Sequence Representation}
+Input/output sequences use the standard encoding:
+\begin{itemize}
+    \item Fixed vocabulary mapping (21 tokens):
+        \begin{itemize}
+            \item 'Empty' (padding) → 0
+            \item 20 amino acids → indices 1-20
+        \end{itemize}
+    \item Fixed sequence length (src\_len = 10)
+    \item Standard transformer positional encoding
+\end{itemize}
+
+\section{Implementation Details}
+
+\subsection{Model Parameters}
+\begin{itemize}
+    \item Property encoder:
+        \begin{itemize}
+            \item Input dimension: Number of edge properties
+            \item Hidden layers: [512, 256, 128]
+            \item Output dimension: 512 (matches decoder dimension)
+        \end{itemize}
+    \item Sequence decoder:
+        \begin{itemize}
+            \item $d_{model} = 512$: Embedding dimension
+            \item $d_{ff} = 2048$: Feed-forward dimension
+            \item $n_{heads} = 8$: Number of attention heads
+            \item $n_{layers} = 6$: Number of transformer layers
+        \end{itemize}
+\end{itemize}
+
+\section{Validation}
+The model's performance is evaluated on:
+\begin{itemize}
+    \item Sequence validity (e.g., single cysteine constraint)
+    \item Property prediction accuracy
+    \item Generation diversity
+    \item Success rate in achieving target properties
+\end{itemize}
+
+\end{document} 
