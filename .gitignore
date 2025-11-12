@@ -6,6 +6,9 @@ Old_models/
 # Local README
 README.local.md
 
+# Local scripts
+git.sh
+
 # Training logs and outputs (already in main .gitignore, but listed here for clarity)
 training_logs/
 out/
