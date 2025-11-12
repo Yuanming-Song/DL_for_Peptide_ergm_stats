@@ -46,15 +46,43 @@ Each phase uses different learning rates and batch sizes to optimize the learnin
 ## Getting Started
 
 1. Clone the repository
-2. Install dependencies (see requirements.txt)
+2. Install dependencies (see environment.yml or requirements.txt)
 3. Prepare your data using the scripts in Data_prepare_R/
 4. Train the model using the scripts in ML_dEdge/
 5. For generative sequence design, use ML_dEdge_gen to generate sequences with target dEdge values
 
+### Quick Start
+
+**Training ML_dEdge (Regression Model):**
+```bash
+cd ML_dEdge/scripts/training
+sbatch train_transformer.sh  # For iteration 1
+# or
+sbatch iteration2/train_transformer_iter2.slurm  # For iteration 2 with curriculum learning
+```
+
+**Training ML_dEdge_gen (Generative Model):**
+```bash
+cd ML_dEdge_gen/v1+2/scripts/training
+sbatch train_generative_model.slurm
+```
+
+**Generating Sequences:**
+```bash
+cd ML_dEdge_gen/v1+2/scripts/generation
+./generate_sequences.sh <model_path> <dEdge_min> <dEdge_max> <seq_length_min> <seq_length_max> <num_sequences>
+```
+
 ## Models
 
 ### ML_dEdge
-The standard regression model that predicts dEdge values for given peptide sequences. See `ML_dEdge/README.md` for details.
+The standard regression model that predicts dEdge values for given peptide sequences. This model:
+- Uses a Transformer encoder architecture
+- Trained on edge statistics differences between dimer and monomer simulations
+- Supports separate training on iteration1 (v1) or iteration2 (v2) data
+- Can also use curriculum learning to combine both iterations
+
+See `ML_dEdge/README.md` for detailed training and usage instructions. For Transformer architecture details, see `ML_dEdge/README_transformer.md`.
 
 ### ML_dEdge_gen
 A conditional generative model that can directly generate peptide sequences with target dEdge value ranges. This model:
@@ -64,7 +92,7 @@ A conditional generative model that can directly generate peptide sequences with
 - Takes as input: dEdge value range, sequence length range, and number of sequences
 - Outputs: Generated sequences with their target dEdge values and sequence lengths
 
-See `ML_dEdge_gen/README.md` for detailed usage instructions.
+See `ML_dEdge_gen/README.md` for detailed usage instructions, including training and generation commands.
 
 ## References
 
