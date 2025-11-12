@@ -21,9 +21,7 @@ DL_for_Peptide/
 ├── Data_prepare_R/          # R scripts for data reshaping and CSV generation
 ├── HPC_util/             # Utility scripts for directory structure and job submission
 ├── ML_dEdge/             # Current working model for edge statistics
-├── ML_dEdge_gen/         # Generative model for sequence generation with target dEdge values
-├── training_logs/        # Training logs (gitignored)
-└── out/                 # Output directory (gitignored)
+└── ML_dEdge_gen/         # Generative model for sequence generation with target dEdge values
 ```
 
 ## Model Architecture
