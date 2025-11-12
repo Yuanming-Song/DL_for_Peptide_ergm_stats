@@ -1,59 +1,81 @@
-# Transformer for Peptide Property Regression
+# Deep Learning for Peptide Self-Assembly Prediction
 
 This repository is a cleaned-up version of [Yuanming-Song/DL_for_Peptide](https://github.com/Yuanming-Song/DL_for_Peptide), which was forked from [maozhudemi/DL_for_Peptide](https://github.com/maozhudemi/DL_for_Peptide), which was originally forked from [Zihan-Liu-00/BiB_ADV-SCI--DL_for_Peptide](https://github.com/Zihan-Liu-00/BiB_ADV-SCI--DL_for_Peptide).
 
-A Transformer-based model for predicting peptide edge statistics differences between dimer and monomer simulations.
+## Overview
+
+This project focuses on predicting peptide self-assembly properties using deep learning approaches, specifically focusing on edge statistics differences between dimer and monomer simulations. The implementation uses a Transformer-based architecture to process peptide sequences and predict their self-assembly behavior.
+
+## Key Features
+
+- **Transformer-based Architecture**: Implements a state-of-the-art Transformer model for sequence processing
+- **Curriculum Learning**: Uses a structured three-stage training approach
+- **Multiple Sequence Lengths**: Supports peptides of varying lengths (5-7 mers)
+- **Comprehensive Analysis**: Includes tools for data processing, model training, and result visualization
+- **Generative Model**: ML_dEdge_gen provides sequence generation capabilities with target dEdge value ranges
 
 ## Project Structure
 
 ```
 DL_for_Peptide/
 ├── Data_prepare_R/          # R scripts for data reshaping and CSV generation
-├── OG_util_py/             # Original base scripts from DL_for_peptide repo
-├── Reserve_new_training/   # Additional models in progress (different ERGM stats)
-├── Old_models/            # Archive of past training attempts
 ├── HPC_util/             # Utility scripts for directory structure and job submission
 ├── ML_dEdge/             # Current working model for edge statistics
+├── ML_dEdge_gen/         # Generative model for sequence generation with target dEdge values
 ├── training_logs/        # Training logs (gitignored)
 └── out/                 # Output directory (gitignored)
 ```
 
 ## Model Architecture
 
-The model is a Transformer neural network with the following specifications:
+The current implementation uses a Transformer neural network with:
 - 6-layer Transformer with 8-head self-attention
 - 512-dimensional embeddings
 - 2048-dimensional feed-forward networks
 - Trained on edge statistics differences between dimer and monomer simulations
 
-## Training Details
+## Training Methodology
 
-- Uses curriculum learning approach
-- Optimized with SGD optimizer
-- Supports multiple sequence lengths (5-7 mers)
-- Implements early stopping and model checkpointing
+The model is trained using a curriculum learning approach with three distinct phases:
+1. Initial training phase
+2. New data integration phase
+3. Fine-tuning phase
 
-## Key Arguments
+Each phase uses different learning rates and batch sizes to optimize the learning process.
 
-```
---epochs        Number of training epochs (default: 100)
---batch_size    Batch size (default: 32)
---lr           Learning rate (default: 0.001)
---seed         Random seed (default: 42)
+## Getting Started
 
-# Model architecture
---d_model      Transformer embedding dimension (default: 512)
---d_ff         Feedforward dimension (default: 2048)
---n_heads      Number of attention heads (default: 8)
---n_layers     Number of transformer layers (default: 6)
-```
+1. Clone the repository
+2. Install dependencies (see requirements.txt)
+3. Prepare your data using the scripts in Data_prepare_R/
+4. Train the model using the scripts in ML_dEdge/
+5. For generative sequence design, use ML_dEdge_gen to generate sequences with target dEdge values
 
-## Output Format
+## Models
 
-Test results are saved in CSV format with:
-- Feature: Original peptide sequence
-- Prediction: Model's predicted value
-- True_Value: Actual label
-- Absolute_Error: |Prediction - True_Value|
+### ML_dEdge
+The standard regression model that predicts dEdge values for given peptide sequences. See `ML_dEdge/README.md` for details.
 
-For detailed implementation and usage instructions, please refer to ML_dEdge/README.md. 
+### ML_dEdge_gen
+A conditional generative model that can directly generate peptide sequences with target dEdge value ranges. This model:
+- Uses a conditional Transformer decoder architecture
+- Combines data from both iteration1 (v1) and iteration2 (v2) for training
+- Generates sequences autoregressively conditioned on dEdge values and sequence lengths
+- Takes as input: dEdge value range, sequence length range, and number of sequences
+- Outputs: Generated sequences with their target dEdge values and sequence lengths
+
+See `ML_dEdge_gen/README.md` for detailed usage instructions.
+
+## References
+
+This work builds upon:
+- Liu et al. (2023) "Efficient prediction of peptide self-assembly through sequential and graphical encoding." Briefings in Bioinformatics
+- Wang et al. (2023) "Deep Learning Empowers the Discovery of Self‐Assembling Peptides with Over 10 Trillion Sequences." Advanced Science
+
+## Contact
+
+For questions or collaborations, please contact the maintainers of this repository.
+
+## License
+
+[Add appropriate license information] 

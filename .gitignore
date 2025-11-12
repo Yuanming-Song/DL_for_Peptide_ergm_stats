@@ -1,51 +1,12 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+# Local development directories
+OG_util_py/
+Reserve_new_training/
+Old_models/
 
-# Model files and data
-*.pt
-*.pth
-*.csv
-*.tsv
-*.dat
-*.npy
-*.npz
-*.h5
-*.hdf5
-*.pkl
-*.pickle
+# Local README
+README.local.md
 
-# Logs and outputs
-out/
-*.out
-*.err
-*.log
+# Training logs and outputs (already in main .gitignore, but listed here for clarity)
 training_logs/
-logs/
-Sequential_Peptides/
-results_seq_dist/
+out/
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store
