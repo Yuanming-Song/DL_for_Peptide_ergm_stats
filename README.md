@@ -53,10 +53,12 @@ Each phase uses different learning rates and batch sizes to optimize the learnin
 
 **Training ML_dEdge (Regression Model):**
 ```bash
-cd ML_dEdge/scripts/training
-sbatch train_transformer.sh  # For iteration 1
-# or
-sbatch iteration2/train_transformer_iter2.slurm  # For iteration 2 with curriculum learning
+# For iteration 1
+cd ML_dEdge/scripts/training/iteration1
+sbatch train_transformer.sh
+# For iteration 2 with curriculum learning
+cd ML_dEdge/scripts/training/iteration2
+sbatch train_transformer_iter2.sh
 ```
 
 **Training ML_dEdge_gen (Generative Model):**
@@ -85,6 +87,7 @@ See `ML_dEdge/README.md` for detailed training and usage instructions. For Trans
 ### ML_dEdge_gen
 A conditional generative model that can directly generate peptide sequences with target dEdge value ranges. This model:
 - Uses a conditional Transformer decoder architecture
+- The `v1+2` directory is named as such because it uses **ALL data from both iteration 1 and iteration 2** from the `ML_dEdge` directory (unlike `ML_dEdge` which can train separately on each iteration)
 - Combines data from both iteration1 (v1) and iteration2 (v2) for training
 - Generates sequences autoregressively conditioned on dEdge values and sequence lengths
 - Takes as input: dEdge value range, sequence length range, and number of sequences

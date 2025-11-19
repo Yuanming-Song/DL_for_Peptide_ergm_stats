@@ -22,14 +22,15 @@ p <- ggplot(dist_data, aes(x = as.numeric(gsub(".*\\(|,.*", "", bin)) + 0.05,
   #geom_density(alpha = 0.5, stat = "identity") +
   #scale_fill_brewer(palette = "Set1") +
   labs(
-    x = "dEdge",
+    x = "ΔEdge",
     y = "Density",
-    fill = "Peptide Length",
+    col = "Peptide Length",
     title = ""
   ) +
   plttheme +
   text_theme +
-  theme(legend.position = c(0.8,0.8))
+  theme(legend.position = c(0.8,0.7),legend.direction = "vertical")+
+  guides(col = guide_legend(ncol = 2))
 print(p)
 
 
@@ -40,6 +41,7 @@ if (exists("save_plots") && save_plots) {
     plot = p,
     width  = 3.25,
     height   = 2,
-    dpi = 1100
+    dpi = 1100,
+    units = "in"
   )
 }

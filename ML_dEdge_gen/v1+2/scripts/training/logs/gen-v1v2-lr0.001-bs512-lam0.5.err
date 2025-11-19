@@ -1,0 +1,2 @@
+./train_generative_model.sh: line 11: activate: No such file or directory
+[2025-11-12T16:14:39.499] error: *** JOB 46343960 ON hpc3-gpu-k54-02 CANCELLED AT 2025-11-12T16:14:39 DUE to SIGNAL Terminated ***

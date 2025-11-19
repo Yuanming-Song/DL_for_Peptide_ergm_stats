@@ -1,0 +1,52 @@
+Loading data from iteration1 (v1)...
+Loading data from iteration2 (v2)...
+Combining datasets...
+Combined training set size: 20495
+Combined validation set size: 2561
+Combined test set size: 2564
+Training on cuda
+Total parameters: 25,451,541
+Training samples: 20495
+Validation samples: 2561
+Epoch 1: New best model saved! (Valid Loss: 2.7178)
+Epoch 2: New best model saved! (Valid Loss: 2.6844)
+Epoch 8: New best model saved! (Valid Loss: 2.6761)
+Epoch 10/200: Train Loss: 2.6874, Valid Loss: 2.6910
+Epoch 13: New best model saved! (Valid Loss: 2.6747)
+Epoch 15: New best model saved! (Valid Loss: 2.6745)
+Epoch 20/200: Train Loss: 2.6841, Valid Loss: 2.6851
+Epoch 30/200: Train Loss: 2.6801, Valid Loss: 2.6816
+Epoch 37: New best model saved! (Valid Loss: 2.6728)
+Epoch 40/200: Train Loss: 2.6802, Valid Loss: 2.6868
+Epoch 46: New best model saved! (Valid Loss: 2.6719)
+Epoch 50/200: Train Loss: 2.6763, Valid Loss: 2.6974
+Epoch 58: New best model saved! (Valid Loss: 2.6701)
+Epoch 60/200: Train Loss: 2.6742, Valid Loss: 2.6740
+Epoch 70/200: Train Loss: 2.6751, Valid Loss: 2.6794
+Epoch 80/200: Train Loss: 2.6752, Valid Loss: 2.6803
+Epoch 86: New best model saved! (Valid Loss: 2.6666)
+Epoch 90/200: Train Loss: 2.6778, Valid Loss: 2.6834
+Epoch 92: New best model saved! (Valid Loss: 2.6658)
+Epoch 100/200: Train Loss: 2.6756, Valid Loss: 2.6756
+Epoch 110/200: Train Loss: 2.6754, Valid Loss: 2.6789
+Epoch 120/200: Train Loss: 2.6765, Valid Loss: 2.6768
+Epoch 130/200: Train Loss: 2.6748, Valid Loss: 2.6800
+Epoch 140/200: Train Loss: 2.6712, Valid Loss: 2.6723
+Epoch 150/200: Train Loss: 2.6742, Valid Loss: 2.6815
+Epoch 160/200: Train Loss: 2.6730, Valid Loss: 2.6810
+Epoch 170/200: Train Loss: 2.6735, Valid Loss: 2.6744
+Epoch 180/200: Train Loss: 2.6729, Valid Loss: 2.6747
+Epoch 190/200: Train Loss: 2.6737, Valid Loss: 2.6733
+Epoch 200/200: Train Loss: 2.6736, Valid Loss: 2.6728
+
+============================================================
+Training completed!
+Best model from epoch 92/200
+Best validation loss: 2.6658
+Model saved to: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge_gen/v1+2/models/ConditionalGenerator_v1v2_lr_0.001_bs_512.pt
+============================================================
+Training completed with parameters:
+Model: ConditionalGenerator
+Architecture: d_model=512, d_ff=2048, n_layers=6, n_heads=8
+Training: epochs=200, batch_size=512, lr=0.001
+Data: Combined iteration1 (v1) and iteration2 (v2)

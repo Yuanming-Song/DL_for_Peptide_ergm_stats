@@ -55,19 +55,18 @@ if (readdata) {
   iter2_data <- read_iteration2_data("~/Documents/Research/HPC/dfs2/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge/")
 }
 
-# Plot 1: Scatter plot with points colored by feature
-p1 <- ggplot(iter2_data$test_results, aes(x = Label, y = Prediction, color = Feature)) +
-    geom_point() +
+# Plot 1: Scatter plot monochromatic (no color by feature)
+p1 <- ggplot(iter2_data$test_results, aes(x = Label, y = Prediction)) +
+    geom_point(color = "black", alpha = 0.6) +
     geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "black") +
-    labs(x = "True dEdge", y = "Predicted dEdge", 
-         color = "Sequence") +
+    labs(x = "True ΔEdge", y = "Predicted ΔEdge") +
     plttheme +
     text_theme
 
 # Plot 2: Distribution of dEdge values across different datasets
 p2 <- ggplot(iter2_data$dist_data, aes(x = value, color = dataset)) +
     geom_density(alpha = 0.5, fill = NA) +
-    labs(x = "dEdge", y = "Normalized Frequency",
+    labs(x = "ΔEdge", y = "Normalized Frequency",
          color = "") +
     plttheme +
     text_theme +
@@ -82,7 +81,7 @@ p3 <- ggplot(iter2_data$error_data, aes(x = Label, y = error, shape = error_type
                       labels = c("Absolute Error", "Squared Error")) +
     scale_color_manual(values = c("abs_error" = "#2ecc71", "squared_error" = "#e74c3c"),
                       labels = c("Absolute Error", "Squared Error")) +
-    labs(x = "True dEdge", y = "Error",
+    labs(x = "True ΔEdge", y = "Error",
          shape = "",
          color = "") +
     ylim(0,1) +

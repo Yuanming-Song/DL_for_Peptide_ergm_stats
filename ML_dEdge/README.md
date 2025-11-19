@@ -14,10 +14,17 @@ ML_dEdge/
 │       └── plot_iteration2_results.R     # Analysis of curriculum learning results
 ├── scripts/          # Training and prediction scripts
 │   ├── training/       # Model training scripts
-│   │   ├── main_seq_clean.py            # Current training implementation
-│   │   ├── train_transformer.sh         # Training script for iteration 1
+│   │   ├── iteration1/                  # Iteration 1 training scripts
+│   │   │   ├── main_seq_clean.py        # Training implementation for iteration 1
+│   │   │   ├── train_transformer.sh     # Training script for iteration 1
+│   │   │   ├── train_transformer_OG.sh  # Original training script
+│   │   │   ├── train_transformer.py     # Python training script
+│   │   │   ├── main_seq_OG.py           # Original training implementation
+│   │   │   └── main_seq_curriculum.py   # Curriculum learning template
 │   │   └── iteration2/                  # Iteration 2 training scripts
-│   │       └── train_transformer_iter2.sh  # Curriculum learning training script
+│   │       ├── main_seq_curriculum.py   # Curriculum learning implementation
+│   │       ├── train_transformer_iter2.sh  # Curriculum learning training script
+│   │       └── submit_transformer_iter2.slurm  # SLURM submission script
 │   ├── prediction/     # Sequence prediction scripts
 │   │   ├── predict_seq.py               # Prediction script
 │   │   └── predict_multiple_lengths.slurm  # Multi-length prediction job
@@ -130,9 +137,10 @@ This curriculum learning approach resulted in:
 - `plot_iteration2_results.R`: Analyzes and visualizes curriculum learning results
 
 ### Training Scripts
-- `main_seq_clean.py`: Current training implementation
-- `train_transformer.sh`: SLURM script for iteration 1 training
-- `train_transformer_iter2.sh`: SLURM script for curriculum learning
+- `scripts/training/iteration1/main_seq_clean.py`: Training implementation for iteration 1
+- `scripts/training/iteration1/train_transformer.sh`: SLURM script for iteration 1 training
+- `scripts/training/iteration2/main_seq_curriculum.py`: Curriculum learning implementation
+- `scripts/training/iteration2/train_transformer_iter2.sh`: SLURM script for curriculum learning
 
 ### Prediction Scripts
 - `predict_seq.py`: Makes predictions using trained model
@@ -155,11 +163,16 @@ This curriculum learning approach resulted in:
 
 ## Usage
 
-1. **Training**
+1. **Training (Iteration 1)**
    ```bash
-   cd scripts/training
+   cd scripts/training/iteration1
    sbatch train_transformer.sh
    ```
+
+2. **Training (Iteration 2)**
+   ```bash
+   cd scripts/training/iteration2
+   sbatch train_transformer_iter2.sh
    ```
 
 3. **Prediction**
@@ -171,6 +184,9 @@ This curriculum learning approach resulted in:
 4. **Analysis**
    ```bash
    cd analysis/plotting
+   # For iteration 1 (does not plot prediction results)
+   Rscript plot_iteration1_results.R
+   # For iteration 2
    Rscript plot_iteration2_results.R
    ```
 

@@ -1,0 +1,103 @@
+Starting overfitting test with all bugs fixed...
+Results will be written to: test_debug/overfit_results.txt
+=
+Using device: cuda
+Loading data...
+Training on 100 sequences
+dEdge range: [-0.6967, 2.3633]
+Creating model...
+Model parameters: 5,015,061
+Starting training...
+================================================================================
+
+=== ARCHITECTURE VERIFICATION ===
+Batch size: 8
+Sequence length: 10
+
+1. Input Format:
+   dec_inputs[0, :6]: [1, 2, 6, 3, 8, 0]
+   Format: [START(1), token1, token2, ..., tokenN, PAD(0), ...]
+
+2. Condition Format:
+   conditions[0]: [0.5762526988983154, 4.0]
+   Format: [dEdge_normalized, sequence_length]
+   Condition is embedded and added to every position via cross-attention
+
+3. Target Format:
+   enc_inputs[0, :6]: [2, 6, 3, 8, 0, 0]
+   Format: [token1, token2, ..., tokenN, PAD(0), ...]
+
+4. Alignment Check:
+   Sequence length (from mask): 4
+   Sequence length (from condition): 4
+   dec_inputs[0, 0] = START(1): True
+   dec_inputs[1:5] == enc_inputs[:4]: True
+
+5. Prediction Alignment:
+   logits[0] (after START) → predicts enc_inputs[0] = 2
+   logits[1] (after token1) → predicts enc_inputs[1] = 6
+   logits[i] → predicts enc_inputs[i]
+
+6. PAD Token Usage:
+   PAD(0) is used for: (1) Padding sequences to fixed length for batching
+                      (2) Currently used to stop generation (problematic)
+   Sequence length from condition should be used to stop generation
+
+7. Architecture Summary:
+   - dEdge and seq_length are encoded via condition embedding (NOT as tokens)
+   - Condition is embedded: Linear(2 -> d_model)
+   - Embedded condition added to every position via cross-attention
+   - This is a VALID approach (condition embedding vs token embedding)
+
+✓ Architecture is CORRECT
+================================================================================
+
+Epoch 10/400: Loss = 1.8833 | LR = 0.001000 | ↓ Improving
+Epoch 20/400: Loss = 1.3815 | LR = 0.001000 | ↓ Improving
+Epoch 30/400: Loss = 1.2636 | LR = 0.001000 | → Plateau
+Epoch 40/400: Loss = 1.2114 | LR = 0.001000 | → Plateau
+Epoch 50/400: Loss = 1.0944 | LR = 0.001000 | → Plateau
+Epoch 60/400: Loss = 1.0593 | LR = 0.001000 | → Plateau
+Epoch 70/400: Loss = 1.0300 | LR = 0.001000 | → Plateau
+Epoch 80/400: Loss = 0.9257 | LR = 0.001000 | ↓ Improving
+Epoch 90/400: Loss = 0.8580 | LR = 0.001000 | ↓ Improving
+Epoch 100/400: Loss = 0.9570 | LR = 0.001000 | → Plateau
+Epoch 110/400: Loss = 0.8905 | LR = 0.001000 | → Plateau
+Epoch 120/400: Loss = 0.9436 | LR = 0.001000 | → Plateau
+Epoch 130/400: Loss = 0.8511 | LR = 0.001000 | → Plateau
+Epoch 140/400: Loss = 0.7784 | LR = 0.001000 | → Plateau
+Epoch 150/400: Loss = 0.8795 | LR = 0.001000 | → Plateau
+Epoch 160/400: Loss = 0.7570 | LR = 0.001000 | → Plateau
+Epoch 170/400: Loss = 0.7567 | LR = 0.001000 | → Plateau
+Epoch 180/400: Loss = 0.8725 | LR = 0.001000 | → Plateau
+Epoch 190/400: Loss = 0.7866 | LR = 0.001000 | → Plateau
+Epoch 200/400: Loss = 0.7112 | LR = 0.001000 | → Plateau
+Epoch 210/400: Loss = 0.7717 | LR = 0.001000 | → Plateau
+Epoch 220/400: Loss = 0.7810 | LR = 0.001000 | → Plateau
+Epoch 230/400: Loss = 0.6783 | LR = 0.001000 | → Plateau
+Epoch 240/400: Loss = 0.7010 | LR = 0.001000 | → Plateau
+Epoch 250/400: Loss = 0.6707 | LR = 0.001000 | → Plateau
+Epoch 260/400: Loss = 0.6540 | LR = 0.001000 | → Plateau
+Epoch 270/400: Loss = 0.6504 | LR = 0.001000 | → Plateau
+Epoch 280/400: Loss = 0.6118 | LR = 0.001000 | ↓ Improving
+Epoch 290/400: Loss = 0.7972 | LR = 0.001000 | → Plateau
+Epoch 300/400: Loss = 0.6806 | LR = 0.001000 | → Plateau
+Epoch 310/400: Loss = 0.9106 | LR = 0.001000 | → Plateau
+Epoch 320/400: Loss = 0.8064 | LR = 0.001000 | → Plateau
+Epoch 330/400: Loss = 0.6736 | LR = 0.001000 | → Plateau
+Epoch 340/400: Loss = 0.5966 | LR = 0.001000 | ↓ Improving
+Epoch 350/400: Loss = 0.6543 | LR = 0.001000 | → Plateau
+Epoch 360/400: Loss = 0.6234 | LR = 0.001000 | → Plateau
+Epoch 370/400: Loss = 0.6798 | LR = 0.001000 | → Plateau
+Epoch 380/400: Loss = 0.6725 | LR = 0.001000 | → Plateau
+Epoch 390/400: Loss = 0.8056 | LR = 0.001000 | → Plateau
+Epoch 400/400: Loss = 0.6187 | LR = 0.001000 | → Plateau
+
+================================================================================
+WARNING: Did not reach target loss < 0.5
+Best loss achieved: 0.5904
+================================================================================
+
+Results saved to: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge_gen/v1+2/scripts/training/test_debug/overfit_results.txt
+=
+Test complete. Check test_debug/overfit_results.txt for results.

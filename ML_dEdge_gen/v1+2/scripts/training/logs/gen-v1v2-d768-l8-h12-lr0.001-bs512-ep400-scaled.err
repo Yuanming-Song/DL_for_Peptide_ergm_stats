@@ -1,0 +1,1 @@
+./train_generative_model.sh: line 58: --dropout: command not found

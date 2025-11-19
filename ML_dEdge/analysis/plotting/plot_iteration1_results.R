@@ -59,25 +59,26 @@ if (readdata) {
 
 
 
-# Plot 1: Scatter plot with points colored by feature
-p1 <- ggplot(iter1_data$test_results, aes(x = label, y = predict, color = feature)) +
-  geom_point() +
+# Plot 1: Scatter plot monochromatic (no color by feature)
+p1 <- ggplot(iter1_data$test_results, aes(x = label, y = predict)) +
+  geom_point(color = "black", alpha = 0.6) +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "black") +
-  labs(x = "True dEdge", y = "Predicted dEdge", 
-       color = "Sequence") +
+  labs(x = "True ΔEdge", y = "Predicted ΔEdge") +
   plttheme +
   text_theme
 
-# Plot 2: Distribution of dEdge values across different datasets
-p2 <- ggplot(iter1_data$dist_data, aes(x = value, color = dataset)) +
+# Plot 2: Distribution of dEdge values across different datasets (excluding predictions for iteration1)
+iter1_dist_data_no_pred <- iter1_data$dist_data %>%
+  filter(dataset != "Predictions")
+p2 <- ggplot(iter1_dist_data_no_pred, aes(x = value, color = dataset)) +
   geom_density(alpha = 0.5, fill = NA) +
-  labs(x = "dEdge", y = "Normalized Frequency",
+  labs(x = "ΔEdge", y = "Normalized Frequency",
        color = "") +
   plttheme +
   text_theme +
   theme(legend.direction = "vertical",
         legend.key.size = unit(8, "pt")) +
-  guides(color = guide_legend(nrow = 4, ncol = 1))
+  guides(color = guide_legend(nrow = 3, ncol = 1))
 
 # Plot 3: Error vs Label scatter plot with different shapes for error types
 p3 <- ggplot(iter1_data$error_data, aes(x = label, y = error, shape = error_type, color = error_type)) +
@@ -86,7 +87,7 @@ p3 <- ggplot(iter1_data$error_data, aes(x = label, y = error, shape = error_type
                      labels = c("Absolute Error", "Squared Error")) +
   scale_color_manual(values = c("abs_error" = "#2ecc71", "squared_error" = "#e74c3c"),
                      labels = c("Absolute Error", "Squared Error")) +
-  labs(x = "True dEdge", y = "Error",
+  labs(x = "True ΔEdge", y = "Error",
        shape = "",
        color = "") +
   ylim(0,1)+

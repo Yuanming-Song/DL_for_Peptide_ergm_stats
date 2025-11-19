@@ -8,20 +8,21 @@ module load anaconda/2024.06
 module load gcc/11.2.0
 
 # Activate conda environment
-source activate dl_py309
+eval "$(conda shell.bash hook)"
+conda activate dl_py309
 
 # Model architecture parameters
-D_MODEL=512
-D_FF=2048
-N_LAYERS=6
-N_HEADS=8
+D_MODEL=768
+D_FF=3072
+N_LAYERS=8
+N_HEADS=12
 SRC_VOCAB_SIZE=21
 SRC_LEN=10
 
 # Training parameters
-EPOCHS=200
+EPOCHS=400
 BATCH_SIZE=512
-LEARNING_RATE=0.001
+LEARNING_RATE=0.003
 SEED=42
 
 # Define base path once at the beginning

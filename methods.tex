@@ -1,0 +1,77 @@
+\subsection{ML\_dEdge: Sequence-to-Property Prediction Model}
+
+The ML\_dEdge model employs a Transformer-based encoder architecture to predict the difference in edge statistics (dEdge) between dimer and monomer peptide simulations from amino acid sequences.
+The model architecture consists of a 6-layer Transformer encoder with 8-head self-attention, 512-dimensional embeddings, and 2048-dimensional feed-forward networks.
+The encoder processes peptide sequences of variable length (up to 10 amino acids) and outputs a continuous dEdge value through a regression head.
+Training is performed using curriculum learning across two iterations: the first iteration establishes baseline performance on a comprehensive dataset of cysteine-containing peptides (dipeptides, tripeptides, and tetrapeptides), while the second iteration introduces additional sequence variations through a three-stage curriculum learning approach with progressively decreasing learning rates (0.2, 0.1, 0.05) and warmup epochs.
+The model is trained to minimize the mean squared error (MSE) loss between predicted and actual dEdge values:
+\begin{equation}
+L_{\text{MSE}} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2
+\end{equation}
+where $N$ is the batch size, $y_i$ is the true dEdge value for sequence $i$, and $\hat{y}_i$ is the predicted dEdge value from the model.
+Training is performed using the Adam optimizer with gradient clipping for stability.
+The final model achieves strong predictive performance, enabling accurate estimation of peptide self-assembly properties from sequence information alone.
+
+\subsection{ML\_dEdge\_gen: Conditional Generative Model for Sequence Design}
+
+The ML\_dEdge\_gen model implements a conditional Transformer decoder architecture for generating peptide sequences that match target dEdge values and sequence lengths.
+Unlike the ML\_dEdge model which predicts properties from sequences, this generative model takes target dEdge value ranges and sequence length specifications as input and generates corresponding peptide sequences.
+The architecture consists of a decoder-only Transformer with 8 layers, 12 attention heads, 768-dimensional embeddings, and 3072-dimensional feed-forward networks.
+Conditional inputs (dEdge value and sequence length) are embedded and used as encoder-like context throughout the decoder layers, enabling the model to generate sequences autoregressively while being conditioned on target properties.
+Training employs adversarial learning with a frozen pre-trained ML\_dEdge model as a critic, combined with soft reconstruction loss for sequence learning.
+Training uses scheduled sampling to gradually transition from teacher forcing (100\% ground truth tokens) to mixed sampling (50\% teacher forcing, 50\% generated tokens) over epochs, and temperature annealing that starts at 2.0 for exploration and decreases to 1.0 for focused generation.
+The training loss consists of two components: (1) a soft reconstruction loss $L_{\text{recon}}$ that learns sequence structure from similar sequences with similar dEdge values:
+\begin{equation}
+L_{\text{recon}} = \frac{1}{N} \sum_{i=1}^{N} \text{KL}(P_{\text{predicted},i} || P_{\text{soft},i})
+\end{equation}
+where $N$ is the batch size, $P_{\text{predicted},i}$ is the predicted token distribution for sequence $i$, and $P_{\text{soft},i}$ is a soft target distribution created from a weighted average of similar sequences (sequences with dEdge values within a threshold of the target dEdge).
+The soft target is constructed by finding the top-$k$ most similar sequences (by dEdge value) and creating a weighted probability distribution over the vocabulary at each position, where weights are inversely proportional to dEdge difference.
+This approach enables the model to learn from multiple valid sequences that map to similar dEdge values, rather than forcing exact sequence matching.
+(2) A dEdge matching loss $L_{\text{dedge}}$ that ensures generated sequences match target dEdge values:
+\begin{equation}
+L_{\text{dedge}} = \frac{1}{N} \sum_{i=1}^{N} (d_{\text{target},i} - d_{\text{predicted},i})^2
+\end{equation}
+where $d_{\text{target},i}$ is the target dEdge value and $d_{\text{predicted},i}$ is the dEdge value predicted by the frozen ML\_dEdge critic model for the generated sequence.
+The total training loss combines these components, with the reconstruction loss scaled by vocabulary size to balance the loss magnitudes:
+\begin{equation}
+L_{\text{total}} = L_{\text{dedge}} + \frac{L_{\text{recon}}}{|\mathcal{V}|}
+\end{equation}
+where $|\mathcal{V}|$ is the vocabulary size (21 tokens).
+Sequence generation uses temperature sampling with linear annealing from $T = 2.0$ (initial) to $T = 1.0$ (final) to balance exploration and exploitation during training.
+Scheduled sampling is employed to gradually reduce teacher forcing probability from 1.0 (initial) to 0.5 (final) over training epochs, helping bridge the gap between training and inference.
+During validation, the dEdge matching loss is computed to assess property matching, with this loss used for model selection.
+To ensure proper evaluation of generalization, the training data uses stratified splits by $(dEdge, \text{length})$ combinations, ensuring that validation and test sets contain condition combinations not seen during training.
+This approach enables the model to generate novel peptide sequences that match specified self-assembly properties, facilitating inverse design of peptides with desired characteristics.
+
+\subsection{NHM\_DL: Two-Stage Network Hamiltonian Model Parameter Prediction}
+
+The NHM\_DL model employs a two-stage Transformer-based architecture to predict Network Hamiltonian Model (NHM) parameters from peptide sequences.
+Unlike standard regression approaches, this model addresses the inherent sparsity of NHM parameters, where many parameters are zero (not selected) for most sequences.
+The architecture consists of a shared Transformer encoder (6 layers, 8 attention heads, 512-dimensional embeddings, 2048-dimensional feed-forward networks) that processes peptide sequences, followed by two parallel prediction heads.
+
+The first stage performs binary classification to predict which NHM parameters are selected (non-zero) for a given sequence.
+This selection head outputs binary logits for each parameter, indicating the probability that the parameter is relevant for the input sequence.
+The selection loss $L_{\text{selection}}$ uses binary cross-entropy:
+\begin{equation}
+L_{\text{selection}} = \frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{P} \text{BCE}(s_{ij}, \hat{s}_{ij})
+\end{equation}
+where $N$ is the batch size, $P$ is the number of NHM parameters, $s_{ij}$ is the true binary selection mask (1 if parameter $j$ is non-zero for sequence $i$, 0 otherwise), and $\hat{s}_{ij}$ is the predicted selection logit.
+
+The second stage performs regression to predict the actual values of selected parameters.
+The regression head outputs continuous values for all parameters, but the loss is masked to only penalize errors for parameters that are actually selected.
+The masked regression loss $L_{\text{regression}}$ is computed as:
+\begin{equation}
+L_{\text{regression}} = \frac{1}{N} \sum_{i=1}^{N} \frac{\sum_{j=1}^{P} s_{ij} \cdot (y_{ij} - \hat{y}_{ij})^2}{\sum_{j=1}^{P} s_{ij}}
+\end{equation}
+where $y_{ij}$ is the true value of parameter $j$ for sequence $i$, $\hat{y}_{ij}$ is the predicted value, and the denominator normalizes by the number of selected parameters to avoid bias from sequences with different numbers of active parameters.
+
+The total training loss combines both stages:
+\begin{equation}
+L_{\text{total}} = L_{\text{selection}} + L_{\text{regression}}
+\end{equation}
+This two-stage approach allows the model to first learn which parameters are relevant for each sequence type, then focus on accurately predicting the values of those selected parameters.
+Training uses the Adam optimizer with learning rate scheduling, and data is split into training (70\%), validation (10\%), and test (20\%) sets.
+NHM parameters are normalized using per-parameter MinMaxScaler to ensure consistent scaling across different parameter types.
+Separate models are trained for monomer and dimer states, as the NHM parameter distributions differ significantly between these states.
+The model enables efficient prediction of complex network statistics from sequence information alone, facilitating high-throughput analysis of peptide self-assembly properties.
+

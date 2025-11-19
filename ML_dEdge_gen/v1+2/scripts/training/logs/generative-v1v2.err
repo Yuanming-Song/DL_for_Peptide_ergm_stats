@@ -1,0 +1,4 @@
+/dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge_gen/v1+2/scripts/training/models_gen.py:44: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at ../aten/src/ATen/native/cuda/Indexing.cu:1435.)
+  scores.masked_fill_(attn_mask, -1e9)
+/dfs9/tw/yuanmis1/my_conda_envs/dl_py309/lib/python3.9/site-packages/torch/autograd/__init__.py:197: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at ../aten/src/ATen/native/cuda/Indexing.cu:1435.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass

@@ -1,0 +1,449 @@
+Loading stratified splits (ensures (dEdge, length) combinations are held out)...
+Stratified training set size: 21352
+Stratified validation set size: 1858
+Stratified test set size: 2410
+Note: Validation/test sets contain (dEdge, length) combinations not seen in training
+Loaded ML_dEdge critic model from /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge/models/iteration2/Transformer_curriculum_lr_0.2_bs_1024.pt
+Critic model frozen (no gradients)
+Critic model (ML_dEdge) loaded for dEdge prediction
+Building similar sequences lookup for soft reconstruction loss...
+Similar sequences lookup built with 93 dEdge bins
+Training on cuda
+Total parameters: 25,451,541
+Training samples: 21352
+Validation samples: 1858
+Training: MSE loss between generated sequence's predicted dEdge and input dEdge
+Training metrics will be saved to: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge_gen/v1+2/data/training_metrics_lr0.001_bs512_ep400_1.csv
+Epoch 1: New best model saved! (Valid Loss: 0.4728)
+Epoch 1/400: Train Loss: 0.9572 (dEdge: 0.9120, Recon: 0.9492) | Valid Loss: 0.4728 | LR: 1.00e-03
+Epoch 2: New best model saved! (Valid Loss: 0.4483)
+Epoch 2/400: Train Loss: 0.9469 (dEdge: 0.9135, Recon: 0.7018) | Valid Loss: 0.4483 | LR: 1.00e-03
+Epoch 3/400: Train Loss: 0.9451 (dEdge: 0.9117, Recon: 0.7016) | Valid Loss: 0.4788 | LR: 1.00e-03
+Epoch 4: New best model saved! (Valid Loss: 0.4330)
+Epoch 4/400: Train Loss: 0.9353 (dEdge: 0.9019, Recon: 0.7015) | Valid Loss: 0.4330 | LR: 1.00e-03
+Epoch 5/400: Train Loss: 0.9420 (dEdge: 0.9086, Recon: 0.7015) | Valid Loss: 0.4463 | LR: 1.00e-03
+Epoch 6/400: Train Loss: 0.9468 (dEdge: 0.9134, Recon: 0.7015) | Valid Loss: 0.4356 | LR: 1.00e-03
+Epoch 7/400: Train Loss: 0.9470 (dEdge: 0.9136, Recon: 0.7015) | Valid Loss: 0.4662 | LR: 1.00e-03
+Epoch 8: New best model saved! (Valid Loss: 0.4230)
+Epoch 8/400: Train Loss: 0.9486 (dEdge: 0.9152, Recon: 0.7015) | Valid Loss: 0.4230 | LR: 1.00e-03
+Epoch 9/400: Train Loss: 0.9521 (dEdge: 0.9187, Recon: 0.7012) | Valid Loss: 0.4732 | LR: 1.00e-03
+Epoch 10: New best model saved! (Valid Loss: 0.4013)
+Epoch 10/400: Train Loss: 0.9354 (dEdge: 0.9022, Recon: 0.6987) | Valid Loss: 0.4013 | LR: 1.00e-03
+Epoch 11/400: Train Loss: 0.8780 (dEdge: 0.8450, Recon: 0.6933) | Valid Loss: 0.4211 | LR: 1.00e-03
+Epoch 12/400: Train Loss: 0.9066 (dEdge: 0.8732, Recon: 0.7014) | Valid Loss: 0.4266 | LR: 1.00e-03
+Epoch 13: New best model saved! (Valid Loss: 0.3919)
+Epoch 13/400: Train Loss: 0.8855 (dEdge: 0.8525, Recon: 0.6934) | Valid Loss: 0.3919 | LR: 1.00e-03
+Epoch 14/400: Train Loss: 0.8772 (dEdge: 0.8443, Recon: 0.6918) | Valid Loss: 0.4122 | LR: 1.00e-03
+Epoch 15/400: Train Loss: 0.9332 (dEdge: 0.8996, Recon: 0.7064) | Valid Loss: 0.4222 | LR: 1.00e-03
+Epoch 16/400: Train Loss: 0.8983 (dEdge: 0.8646, Recon: 0.7075) | Valid Loss: 0.4397 | LR: 1.00e-03
+Epoch 17/400: Train Loss: 0.9236 (dEdge: 0.8904, Recon: 0.6977) | Valid Loss: 0.4048 | LR: 1.00e-03
+Epoch 18/400: Train Loss: 0.8648 (dEdge: 0.8318, Recon: 0.6919) | Valid Loss: 0.4043 | LR: 1.00e-03
+Epoch 19/400: Train Loss: 0.8786 (dEdge: 0.8457, Recon: 0.6913) | Valid Loss: 0.3935 | LR: 1.00e-03
+Epoch 20/400: Train Loss: 0.8794 (dEdge: 0.8465, Recon: 0.6918) | Valid Loss: 0.4036 | LR: 1.00e-03
+Epoch 21: New best model saved! (Valid Loss: 0.3865)
+Epoch 21/400: Train Loss: 0.8958 (dEdge: 0.8629, Recon: 0.6908) | Valid Loss: 0.3865 | LR: 1.00e-03
+Epoch 22/400: Train Loss: 0.8753 (dEdge: 0.8424, Recon: 0.6907) | Valid Loss: 0.4109 | LR: 1.00e-03
+Epoch 23: New best model saved! (Valid Loss: 0.3823)
+Epoch 23/400: Train Loss: 0.8778 (dEdge: 0.8449, Recon: 0.6914) | Valid Loss: 0.3823 | LR: 1.00e-03
+Epoch 24/400: Train Loss: 0.9346 (dEdge: 0.9011, Recon: 0.7053) | Valid Loss: 0.4545 | LR: 1.00e-03
+Epoch 25/400: Train Loss: 0.9474 (dEdge: 0.9141, Recon: 0.6995) | Valid Loss: 0.4336 | LR: 1.00e-03
+Epoch 26/400: Train Loss: 0.9202 (dEdge: 0.8872, Recon: 0.6942) | Valid Loss: 0.4102 | LR: 1.00e-03
+Epoch 27/400: Train Loss: 0.8965 (dEdge: 0.8635, Recon: 0.6937) | Valid Loss: 0.4478 | LR: 1.00e-03
+Epoch 28/400: Train Loss: 0.9067 (dEdge: 0.8735, Recon: 0.6966) | Valid Loss: 0.4229 | LR: 1.00e-03
+Epoch 29/400: Train Loss: 0.8858 (dEdge: 0.8516, Recon: 0.7172) | Valid Loss: 0.4587 | LR: 1.00e-03
+Epoch 30/400: Train Loss: 0.9774 (dEdge: 0.9433, Recon: 0.7158) | Valid Loss: 0.4554 | LR: 1.00e-03
+Epoch 31/400: Train Loss: 0.9543 (dEdge: 0.9209, Recon: 0.7019) | Valid Loss: 0.4426 | LR: 1.00e-03
+Epoch 32/400: Train Loss: 0.9460 (dEdge: 0.9126, Recon: 0.7016) | Valid Loss: 0.4536 | LR: 1.00e-03
+Epoch 33/400: Train Loss: 0.9473 (dEdge: 0.9139, Recon: 0.7016) | Valid Loss: 0.4512 | LR: 1.00e-03
+Epoch 00034: reducing learning rate of group 0 to 5.0000e-04.
+Epoch 34/400: Train Loss: 0.9395 (dEdge: 0.9062, Recon: 0.6987) | Valid Loss: 0.4466 | LR: 5.00e-04
+Epoch 35/400: Train Loss: 0.9482 (dEdge: 0.9148, Recon: 0.7016) | Valid Loss: 0.4578 | LR: 5.00e-04
+Epoch 36/400: Train Loss: 0.9559 (dEdge: 0.9225, Recon: 0.7015) | Valid Loss: 0.4470 | LR: 5.00e-04
+Epoch 37/400: Train Loss: 0.9553 (dEdge: 0.9219, Recon: 0.7014) | Valid Loss: 0.4683 | LR: 5.00e-04
+Epoch 38/400: Train Loss: 0.9435 (dEdge: 0.9101, Recon: 0.7013) | Valid Loss: 0.4779 | LR: 5.00e-04
+Epoch 39/400: Train Loss: 0.9386 (dEdge: 0.9052, Recon: 0.7010) | Valid Loss: 0.4656 | LR: 5.00e-04
+Epoch 40/400: Train Loss: 0.9416 (dEdge: 0.9082, Recon: 0.7001) | Valid Loss: 0.4584 | LR: 5.00e-04
+Epoch 41/400: Train Loss: 0.9185 (dEdge: 0.8852, Recon: 0.7004) | Valid Loss: 0.4491 | LR: 5.00e-04
+Epoch 42/400: Train Loss: 0.8835 (dEdge: 0.8498, Recon: 0.7093) | Valid Loss: 0.4537 | LR: 5.00e-04
+Epoch 43/400: Train Loss: 0.9314 (dEdge: 0.8980, Recon: 0.7017) | Valid Loss: 0.4416 | LR: 5.00e-04
+Epoch 44/400: Train Loss: 0.9595 (dEdge: 0.9261, Recon: 0.7013) | Valid Loss: 0.4644 | LR: 5.00e-04
+Epoch 00045: reducing learning rate of group 0 to 2.5000e-04.
+Epoch 45/400: Train Loss: 0.9560 (dEdge: 0.9226, Recon: 0.7013) | Valid Loss: 0.4521 | LR: 2.50e-04
+Epoch 46/400: Train Loss: 0.9597 (dEdge: 0.9263, Recon: 0.7011) | Valid Loss: 0.4541 | LR: 2.50e-04
+Epoch 47/400: Train Loss: 0.9473 (dEdge: 0.9140, Recon: 0.7011) | Valid Loss: 0.4529 | LR: 2.50e-04
+Epoch 48/400: Train Loss: 0.9525 (dEdge: 0.9192, Recon: 0.7011) | Valid Loss: 0.4594 | LR: 2.50e-04
+Epoch 49/400: Train Loss: 0.9461 (dEdge: 0.9127, Recon: 0.7010) | Valid Loss: 0.4192 | LR: 2.50e-04
+Epoch 50/400: Train Loss: 0.9532 (dEdge: 0.9199, Recon: 0.7009) | Valid Loss: 0.4862 | LR: 2.50e-04
+Epoch 51/400: Train Loss: 0.9469 (dEdge: 0.9135, Recon: 0.7006) | Valid Loss: 0.4423 | LR: 2.50e-04
+Epoch 52/400: Train Loss: 0.9424 (dEdge: 0.9091, Recon: 0.7002) | Valid Loss: 0.4634 | LR: 2.50e-04
+Epoch 53/400: Train Loss: 0.9530 (dEdge: 0.9197, Recon: 0.6989) | Valid Loss: 0.4486 | LR: 2.50e-04
+Epoch 54/400: Train Loss: 0.9222 (dEdge: 0.8891, Recon: 0.6952) | Valid Loss: 0.4668 | LR: 2.50e-04
+Epoch 55/400: Train Loss: 0.9164 (dEdge: 0.8847, Recon: 0.6653) | Valid Loss: 0.5228 | LR: 2.50e-04
+Epoch 00056: reducing learning rate of group 0 to 1.2500e-04.
+Epoch 56/400: Train Loss: 0.8043 (dEdge: 0.7758, Recon: 0.5983) | Valid Loss: 0.5275 | LR: 1.25e-04
+Epoch 57/400: Train Loss: 0.6800 (dEdge: 0.6526, Recon: 0.5766) | Valid Loss: 0.4753 | LR: 1.25e-04
+Epoch 58/400: Train Loss: 0.6007 (dEdge: 0.5744, Recon: 0.5514) | Valid Loss: 0.4461 | LR: 1.25e-04
+Epoch 59/400: Train Loss: 0.5718 (dEdge: 0.5467, Recon: 0.5289) | Valid Loss: 0.3851 | LR: 1.25e-04
+Epoch 60: New best model saved! (Valid Loss: 0.3378)
+Epoch 60/400: Train Loss: 0.5489 (dEdge: 0.5245, Recon: 0.5114) | Valid Loss: 0.3378 | LR: 1.25e-04
+Epoch 61: New best model saved! (Valid Loss: 0.3288)
+Epoch 61/400: Train Loss: 0.5428 (dEdge: 0.5191, Recon: 0.4984) | Valid Loss: 0.3288 | LR: 1.25e-04
+Epoch 62/400: Train Loss: 0.5321 (dEdge: 0.5087, Recon: 0.4913) | Valid Loss: 0.3382 | LR: 1.25e-04
+Epoch 63/400: Train Loss: 0.5331 (dEdge: 0.5099, Recon: 0.4875) | Valid Loss: 0.3314 | LR: 1.25e-04
+Epoch 64/400: Train Loss: 0.5370 (dEdge: 0.5139, Recon: 0.4853) | Valid Loss: 0.3319 | LR: 1.25e-04
+Epoch 65: New best model saved! (Valid Loss: 0.3275)
+Epoch 65/400: Train Loss: 0.5342 (dEdge: 0.5111, Recon: 0.4848) | Valid Loss: 0.3275 | LR: 1.25e-04
+Epoch 66/400: Train Loss: 0.5428 (dEdge: 0.5198, Recon: 0.4837) | Valid Loss: 0.3275 | LR: 1.25e-04
+Epoch 67/400: Train Loss: 0.5332 (dEdge: 0.5102, Recon: 0.4831) | Valid Loss: 0.3320 | LR: 1.25e-04
+Epoch 68: New best model saved! (Valid Loss: 0.3195)
+Epoch 68/400: Train Loss: 0.5368 (dEdge: 0.5139, Recon: 0.4810) | Valid Loss: 0.3195 | LR: 1.25e-04
+Epoch 69/400: Train Loss: 0.5386 (dEdge: 0.5157, Recon: 0.4811) | Valid Loss: 0.3413 | LR: 1.25e-04
+Epoch 70/400: Train Loss: 0.5336 (dEdge: 0.5107, Recon: 0.4815) | Valid Loss: 0.3332 | LR: 1.25e-04
+Epoch 71/400: Train Loss: 0.5353 (dEdge: 0.5124, Recon: 0.4796) | Valid Loss: 0.3246 | LR: 1.25e-04
+Epoch 72: New best model saved! (Valid Loss: 0.3055)
+Epoch 72/400: Train Loss: 0.5344 (dEdge: 0.5116, Recon: 0.4786) | Valid Loss: 0.3055 | LR: 1.25e-04
+Epoch 73/400: Train Loss: 0.5345 (dEdge: 0.5117, Recon: 0.4786) | Valid Loss: 0.3413 | LR: 1.25e-04
+Epoch 74/400: Train Loss: 0.5312 (dEdge: 0.5084, Recon: 0.4777) | Valid Loss: 0.3261 | LR: 1.25e-04
+Epoch 75/400: Train Loss: 0.5308 (dEdge: 0.5080, Recon: 0.4791) | Valid Loss: 0.3431 | LR: 1.25e-04
+Epoch 76/400: Train Loss: 0.5366 (dEdge: 0.5139, Recon: 0.4770) | Valid Loss: 0.3176 | LR: 1.25e-04
+Epoch 77/400: Train Loss: 0.5329 (dEdge: 0.5102, Recon: 0.4778) | Valid Loss: 0.3299 | LR: 1.25e-04
+Epoch 78/400: Train Loss: 0.5346 (dEdge: 0.5119, Recon: 0.4762) | Valid Loss: 0.3269 | LR: 1.25e-04
+Epoch 79/400: Train Loss: 0.5335 (dEdge: 0.5108, Recon: 0.4761) | Valid Loss: 0.3323 | LR: 1.25e-04
+Epoch 80/400: Train Loss: 0.5305 (dEdge: 0.5078, Recon: 0.4757) | Valid Loss: 0.3311 | LR: 1.25e-04
+Epoch 81/400: Train Loss: 0.5323 (dEdge: 0.5096, Recon: 0.4753) | Valid Loss: 0.3374 | LR: 1.25e-04
+Epoch 82/400: Train Loss: 0.5302 (dEdge: 0.5076, Recon: 0.4749) | Valid Loss: 0.3261 | LR: 1.25e-04
+Epoch 00083: reducing learning rate of group 0 to 6.2500e-05.
+Epoch 83/400: Train Loss: 0.5293 (dEdge: 0.5067, Recon: 0.4751) | Valid Loss: 0.3350 | LR: 6.25e-05
+Epoch 84/400: Train Loss: 0.5312 (dEdge: 0.5086, Recon: 0.4738) | Valid Loss: 0.3305 | LR: 6.25e-05
+Epoch 85/400: Train Loss: 0.5338 (dEdge: 0.5113, Recon: 0.4735) | Valid Loss: 0.3273 | LR: 6.25e-05
+Epoch 86/400: Train Loss: 0.5338 (dEdge: 0.5113, Recon: 0.4733) | Valid Loss: 0.3258 | LR: 6.25e-05
+Epoch 87/400: Train Loss: 0.5326 (dEdge: 0.5100, Recon: 0.4733) | Valid Loss: 0.3301 | LR: 6.25e-05
+Epoch 88/400: Train Loss: 0.5307 (dEdge: 0.5082, Recon: 0.4730) | Valid Loss: 0.3256 | LR: 6.25e-05
+Epoch 89/400: Train Loss: 0.5359 (dEdge: 0.5134, Recon: 0.4729) | Valid Loss: 0.3229 | LR: 6.25e-05
+Epoch 90/400: Train Loss: 0.5302 (dEdge: 0.5076, Recon: 0.4729) | Valid Loss: 0.3322 | LR: 6.25e-05
+Epoch 91/400: Train Loss: 0.5346 (dEdge: 0.5121, Recon: 0.4726) | Valid Loss: 0.3355 | LR: 6.25e-05
+Epoch 92/400: Train Loss: 0.5336 (dEdge: 0.5111, Recon: 0.4730) | Valid Loss: 0.3238 | LR: 6.25e-05
+Epoch 93/400: Train Loss: 0.5344 (dEdge: 0.5119, Recon: 0.4721) | Valid Loss: 0.3243 | LR: 6.25e-05
+Epoch 00094: reducing learning rate of group 0 to 3.1250e-05.
+Epoch 94/400: Train Loss: 0.5389 (dEdge: 0.5164, Recon: 0.4721) | Valid Loss: 0.3196 | LR: 3.13e-05
+Epoch 95/400: Train Loss: 0.5382 (dEdge: 0.5158, Recon: 0.4716) | Valid Loss: 0.3413 | LR: 3.13e-05
+Epoch 96/400: Train Loss: 0.5284 (dEdge: 0.5060, Recon: 0.4714) | Valid Loss: 0.3381 | LR: 3.13e-05
+Epoch 97/400: Train Loss: 0.5302 (dEdge: 0.5077, Recon: 0.4714) | Valid Loss: 0.3279 | LR: 3.13e-05
+Epoch 98/400: Train Loss: 0.5328 (dEdge: 0.5104, Recon: 0.4713) | Valid Loss: 0.3266 | LR: 3.13e-05
+Epoch 99/400: Train Loss: 0.5348 (dEdge: 0.5124, Recon: 0.4711) | Valid Loss: 0.3327 | LR: 3.13e-05
+Epoch 100/400: Train Loss: 0.5287 (dEdge: 0.5063, Recon: 0.4713) | Valid Loss: 0.3322 | LR: 3.13e-05
+Epoch 101/400: Train Loss: 0.5294 (dEdge: 0.5069, Recon: 0.4710) | Valid Loss: 0.3162 | LR: 3.13e-05
+Epoch 102/400: Train Loss: 0.5349 (dEdge: 0.5125, Recon: 0.4709) | Valid Loss: 0.3143 | LR: 3.13e-05
+Epoch 103/400: Train Loss: 0.5325 (dEdge: 0.5101, Recon: 0.4710) | Valid Loss: 0.3305 | LR: 3.13e-05
+Epoch 104/400: Train Loss: 0.5308 (dEdge: 0.5084, Recon: 0.4707) | Valid Loss: 0.3333 | LR: 3.13e-05
+Epoch 00105: reducing learning rate of group 0 to 1.5625e-05.
+Epoch 105/400: Train Loss: 0.5347 (dEdge: 0.5123, Recon: 0.4707) | Valid Loss: 0.3278 | LR: 1.56e-05
+Epoch 106/400: Train Loss: 0.5293 (dEdge: 0.5069, Recon: 0.4703) | Valid Loss: 0.3339 | LR: 1.56e-05
+Epoch 107/400: Train Loss: 0.5348 (dEdge: 0.5124, Recon: 0.4705) | Valid Loss: 0.3381 | LR: 1.56e-05
+Epoch 108/400: Train Loss: 0.5332 (dEdge: 0.5108, Recon: 0.4703) | Valid Loss: 0.3341 | LR: 1.56e-05
+Epoch 109/400: Train Loss: 0.5359 (dEdge: 0.5135, Recon: 0.4702) | Valid Loss: 0.3293 | LR: 1.56e-05
+Epoch 110/400: Train Loss: 0.5378 (dEdge: 0.5154, Recon: 0.4701) | Valid Loss: 0.3247 | LR: 1.56e-05
+Epoch 111/400: Train Loss: 0.5340 (dEdge: 0.5116, Recon: 0.4701) | Valid Loss: 0.3312 | LR: 1.56e-05
+Epoch 112/400: Train Loss: 0.5321 (dEdge: 0.5098, Recon: 0.4700) | Valid Loss: 0.3333 | LR: 1.56e-05
+Epoch 113/400: Train Loss: 0.5279 (dEdge: 0.5055, Recon: 0.4701) | Valid Loss: 0.3303 | LR: 1.56e-05
+Epoch 114/400: Train Loss: 0.5353 (dEdge: 0.5129, Recon: 0.4701) | Valid Loss: 0.3358 | LR: 1.56e-05
+Epoch 115/400: Train Loss: 0.5315 (dEdge: 0.5091, Recon: 0.4699) | Valid Loss: 0.3344 | LR: 1.56e-05
+Epoch 00116: reducing learning rate of group 0 to 1.0000e-05.
+Epoch 116/400: Train Loss: 0.5329 (dEdge: 0.5105, Recon: 0.4701) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 117/400: Train Loss: 0.5363 (dEdge: 0.5139, Recon: 0.4698) | Valid Loss: 0.3317 | LR: 1.00e-05
+Epoch 118/400: Train Loss: 0.5339 (dEdge: 0.5116, Recon: 0.4697) | Valid Loss: 0.3333 | LR: 1.00e-05
+Epoch 119/400: Train Loss: 0.5320 (dEdge: 0.5096, Recon: 0.4697) | Valid Loss: 0.3290 | LR: 1.00e-05
+Epoch 120/400: Train Loss: 0.5351 (dEdge: 0.5127, Recon: 0.4697) | Valid Loss: 0.3306 | LR: 1.00e-05
+Epoch 121/400: Train Loss: 0.5362 (dEdge: 0.5138, Recon: 0.4697) | Valid Loss: 0.3299 | LR: 1.00e-05
+Epoch 122/400: Train Loss: 0.5338 (dEdge: 0.5114, Recon: 0.4697) | Valid Loss: 0.3483 | LR: 1.00e-05
+Epoch 123/400: Train Loss: 0.5358 (dEdge: 0.5134, Recon: 0.4696) | Valid Loss: 0.3267 | LR: 1.00e-05
+Epoch 124/400: Train Loss: 0.5362 (dEdge: 0.5139, Recon: 0.4696) | Valid Loss: 0.3288 | LR: 1.00e-05
+Epoch 125/400: Train Loss: 0.5332 (dEdge: 0.5108, Recon: 0.4695) | Valid Loss: 0.3271 | LR: 1.00e-05
+Epoch 126/400: Train Loss: 0.5337 (dEdge: 0.5114, Recon: 0.4696) | Valid Loss: 0.3281 | LR: 1.00e-05
+Epoch 127/400: Train Loss: 0.5316 (dEdge: 0.5092, Recon: 0.4695) | Valid Loss: 0.3343 | LR: 1.00e-05
+Epoch 128/400: Train Loss: 0.5382 (dEdge: 0.5158, Recon: 0.4695) | Valid Loss: 0.3317 | LR: 1.00e-05
+Epoch 129/400: Train Loss: 0.5303 (dEdge: 0.5080, Recon: 0.4695) | Valid Loss: 0.3277 | LR: 1.00e-05
+Epoch 130/400: Train Loss: 0.5342 (dEdge: 0.5118, Recon: 0.4695) | Valid Loss: 0.3266 | LR: 1.00e-05
+Epoch 131/400: Train Loss: 0.5320 (dEdge: 0.5096, Recon: 0.4694) | Valid Loss: 0.3269 | LR: 1.00e-05
+Epoch 132/400: Train Loss: 0.5367 (dEdge: 0.5144, Recon: 0.4694) | Valid Loss: 0.3191 | LR: 1.00e-05
+Epoch 133/400: Train Loss: 0.5333 (dEdge: 0.5110, Recon: 0.4694) | Valid Loss: 0.3298 | LR: 1.00e-05
+Epoch 134/400: Train Loss: 0.5336 (dEdge: 0.5112, Recon: 0.4693) | Valid Loss: 0.3349 | LR: 1.00e-05
+Epoch 135/400: Train Loss: 0.5325 (dEdge: 0.5102, Recon: 0.4696) | Valid Loss: 0.3344 | LR: 1.00e-05
+Epoch 136/400: Train Loss: 0.5293 (dEdge: 0.5070, Recon: 0.4693) | Valid Loss: 0.3341 | LR: 1.00e-05
+Epoch 137/400: Train Loss: 0.5344 (dEdge: 0.5121, Recon: 0.4693) | Valid Loss: 0.3320 | LR: 1.00e-05
+Epoch 138/400: Train Loss: 0.5325 (dEdge: 0.5102, Recon: 0.4694) | Valid Loss: 0.3207 | LR: 1.00e-05
+Epoch 139/400: Train Loss: 0.5319 (dEdge: 0.5096, Recon: 0.4693) | Valid Loss: 0.3313 | LR: 1.00e-05
+Epoch 140/400: Train Loss: 0.5341 (dEdge: 0.5118, Recon: 0.4692) | Valid Loss: 0.3299 | LR: 1.00e-05
+Epoch 141/400: Train Loss: 0.5269 (dEdge: 0.5046, Recon: 0.4691) | Valid Loss: 0.3231 | LR: 1.00e-05
+Epoch 142/400: Train Loss: 0.5340 (dEdge: 0.5116, Recon: 0.4692) | Valid Loss: 0.3306 | LR: 1.00e-05
+Epoch 143/400: Train Loss: 0.5296 (dEdge: 0.5073, Recon: 0.4692) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 144/400: Train Loss: 0.5338 (dEdge: 0.5114, Recon: 0.4693) | Valid Loss: 0.3298 | LR: 1.00e-05
+Epoch 145/400: Train Loss: 0.5306 (dEdge: 0.5083, Recon: 0.4691) | Valid Loss: 0.3275 | LR: 1.00e-05
+Epoch 146/400: Train Loss: 0.5316 (dEdge: 0.5092, Recon: 0.4690) | Valid Loss: 0.3237 | LR: 1.00e-05
+Epoch 147/400: Train Loss: 0.5358 (dEdge: 0.5135, Recon: 0.4692) | Valid Loss: 0.3416 | LR: 1.00e-05
+Epoch 148/400: Train Loss: 0.5304 (dEdge: 0.5081, Recon: 0.4690) | Valid Loss: 0.3326 | LR: 1.00e-05
+Epoch 149/400: Train Loss: 0.5333 (dEdge: 0.5109, Recon: 0.4690) | Valid Loss: 0.3357 | LR: 1.00e-05
+Epoch 150/400: Train Loss: 0.5316 (dEdge: 0.5093, Recon: 0.4690) | Valid Loss: 0.3321 | LR: 1.00e-05
+Epoch 151/400: Train Loss: 0.5347 (dEdge: 0.5123, Recon: 0.4690) | Valid Loss: 0.3362 | LR: 1.00e-05
+Epoch 152/400: Train Loss: 0.5301 (dEdge: 0.5078, Recon: 0.4690) | Valid Loss: 0.3372 | LR: 1.00e-05
+Epoch 153/400: Train Loss: 0.5373 (dEdge: 0.5150, Recon: 0.4689) | Valid Loss: 0.3354 | LR: 1.00e-05
+Epoch 154/400: Train Loss: 0.5315 (dEdge: 0.5092, Recon: 0.4688) | Valid Loss: 0.3196 | LR: 1.00e-05
+Epoch 155/400: Train Loss: 0.5333 (dEdge: 0.5110, Recon: 0.4689) | Valid Loss: 0.3265 | LR: 1.00e-05
+Epoch 156/400: Train Loss: 0.5279 (dEdge: 0.5056, Recon: 0.4689) | Valid Loss: 0.3403 | LR: 1.00e-05
+Epoch 157/400: Train Loss: 0.5325 (dEdge: 0.5101, Recon: 0.4688) | Valid Loss: 0.3215 | LR: 1.00e-05
+Epoch 158/400: Train Loss: 0.5333 (dEdge: 0.5110, Recon: 0.4687) | Valid Loss: 0.3250 | LR: 1.00e-05
+Epoch 159/400: Train Loss: 0.5285 (dEdge: 0.5062, Recon: 0.4687) | Valid Loss: 0.3261 | LR: 1.00e-05
+Epoch 160/400: Train Loss: 0.5303 (dEdge: 0.5080, Recon: 0.4687) | Valid Loss: 0.3264 | LR: 1.00e-05
+Epoch 161/400: Train Loss: 0.5312 (dEdge: 0.5089, Recon: 0.4686) | Valid Loss: 0.3302 | LR: 1.00e-05
+Epoch 162/400: Train Loss: 0.5355 (dEdge: 0.5132, Recon: 0.4687) | Valid Loss: 0.3334 | LR: 1.00e-05
+Epoch 163/400: Train Loss: 0.5318 (dEdge: 0.5095, Recon: 0.4686) | Valid Loss: 0.3233 | LR: 1.00e-05
+Epoch 164/400: Train Loss: 0.5311 (dEdge: 0.5087, Recon: 0.4686) | Valid Loss: 0.3246 | LR: 1.00e-05
+Epoch 165/400: Train Loss: 0.5340 (dEdge: 0.5117, Recon: 0.4687) | Valid Loss: 0.3315 | LR: 1.00e-05
+Epoch 166/400: Train Loss: 0.5325 (dEdge: 0.5102, Recon: 0.4686) | Valid Loss: 0.3326 | LR: 1.00e-05
+Epoch 167/400: Train Loss: 0.5364 (dEdge: 0.5140, Recon: 0.4686) | Valid Loss: 0.3243 | LR: 1.00e-05
+Epoch 168/400: Train Loss: 0.5308 (dEdge: 0.5084, Recon: 0.4685) | Valid Loss: 0.3316 | LR: 1.00e-05
+Epoch 169/400: Train Loss: 0.5326 (dEdge: 0.5103, Recon: 0.4684) | Valid Loss: 0.3283 | LR: 1.00e-05
+Epoch 170/400: Train Loss: 0.5335 (dEdge: 0.5112, Recon: 0.4685) | Valid Loss: 0.3358 | LR: 1.00e-05
+Epoch 171/400: Train Loss: 0.5295 (dEdge: 0.5072, Recon: 0.4685) | Valid Loss: 0.3357 | LR: 1.00e-05
+Epoch 172/400: Train Loss: 0.5302 (dEdge: 0.5079, Recon: 0.4684) | Valid Loss: 0.3365 | LR: 1.00e-05
+Epoch 173/400: Train Loss: 0.5332 (dEdge: 0.5109, Recon: 0.4685) | Valid Loss: 0.3297 | LR: 1.00e-05
+Epoch 174/400: Train Loss: 0.5354 (dEdge: 0.5131, Recon: 0.4684) | Valid Loss: 0.3351 | LR: 1.00e-05
+Epoch 175/400: Train Loss: 0.5358 (dEdge: 0.5135, Recon: 0.4683) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 176/400: Train Loss: 0.5331 (dEdge: 0.5108, Recon: 0.4685) | Valid Loss: 0.3225 | LR: 1.00e-05
+Epoch 177/400: Train Loss: 0.5299 (dEdge: 0.5076, Recon: 0.4683) | Valid Loss: 0.3326 | LR: 1.00e-05
+Epoch 178/400: Train Loss: 0.5384 (dEdge: 0.5161, Recon: 0.4683) | Valid Loss: 0.3359 | LR: 1.00e-05
+Epoch 179/400: Train Loss: 0.5348 (dEdge: 0.5125, Recon: 0.4683) | Valid Loss: 0.3288 | LR: 1.00e-05
+Epoch 180/400: Train Loss: 0.5324 (dEdge: 0.5101, Recon: 0.4684) | Valid Loss: 0.3364 | LR: 1.00e-05
+Epoch 181/400: Train Loss: 0.5324 (dEdge: 0.5101, Recon: 0.4682) | Valid Loss: 0.3284 | LR: 1.00e-05
+Epoch 182/400: Train Loss: 0.5334 (dEdge: 0.5111, Recon: 0.4682) | Valid Loss: 0.3307 | LR: 1.00e-05
+Epoch 183/400: Train Loss: 0.5368 (dEdge: 0.5146, Recon: 0.4681) | Valid Loss: 0.3223 | LR: 1.00e-05
+Epoch 184/400: Train Loss: 0.5336 (dEdge: 0.5113, Recon: 0.4681) | Valid Loss: 0.3366 | LR: 1.00e-05
+Epoch 185/400: Train Loss: 0.5316 (dEdge: 0.5093, Recon: 0.4683) | Valid Loss: 0.3351 | LR: 1.00e-05
+Epoch 186/400: Train Loss: 0.5331 (dEdge: 0.5108, Recon: 0.4681) | Valid Loss: 0.3411 | LR: 1.00e-05
+Epoch 187/400: Train Loss: 0.5348 (dEdge: 0.5126, Recon: 0.4681) | Valid Loss: 0.3401 | LR: 1.00e-05
+Epoch 188/400: Train Loss: 0.5368 (dEdge: 0.5145, Recon: 0.4680) | Valid Loss: 0.3280 | LR: 1.00e-05
+Epoch 189/400: Train Loss: 0.5299 (dEdge: 0.5076, Recon: 0.4680) | Valid Loss: 0.3394 | LR: 1.00e-05
+Epoch 190/400: Train Loss: 0.5315 (dEdge: 0.5092, Recon: 0.4680) | Valid Loss: 0.3385 | LR: 1.00e-05
+Epoch 191/400: Train Loss: 0.5316 (dEdge: 0.5093, Recon: 0.4679) | Valid Loss: 0.3293 | LR: 1.00e-05
+Epoch 192/400: Train Loss: 0.5280 (dEdge: 0.5058, Recon: 0.4679) | Valid Loss: 0.3256 | LR: 1.00e-05
+Epoch 193/400: Train Loss: 0.5319 (dEdge: 0.5096, Recon: 0.4679) | Valid Loss: 0.3293 | LR: 1.00e-05
+Epoch 194/400: Train Loss: 0.5329 (dEdge: 0.5107, Recon: 0.4679) | Valid Loss: 0.3343 | LR: 1.00e-05
+Epoch 195/400: Train Loss: 0.5328 (dEdge: 0.5105, Recon: 0.4679) | Valid Loss: 0.3372 | LR: 1.00e-05
+Epoch 196/400: Train Loss: 0.5339 (dEdge: 0.5116, Recon: 0.4679) | Valid Loss: 0.3279 | LR: 1.00e-05
+Epoch 197/400: Train Loss: 0.5336 (dEdge: 0.5113, Recon: 0.4678) | Valid Loss: 0.3287 | LR: 1.00e-05
+Epoch 198/400: Train Loss: 0.5318 (dEdge: 0.5095, Recon: 0.4678) | Valid Loss: 0.3230 | LR: 1.00e-05
+Epoch 199/400: Train Loss: 0.5350 (dEdge: 0.5127, Recon: 0.4677) | Valid Loss: 0.3290 | LR: 1.00e-05
+Epoch 200/400: Train Loss: 0.5348 (dEdge: 0.5126, Recon: 0.4679) | Valid Loss: 0.3234 | LR: 1.00e-05
+Epoch 201/400: Train Loss: 0.5335 (dEdge: 0.5112, Recon: 0.4679) | Valid Loss: 0.3200 | LR: 1.00e-05
+Epoch 202/400: Train Loss: 0.5293 (dEdge: 0.5070, Recon: 0.4677) | Valid Loss: 0.3353 | LR: 1.00e-05
+Epoch 203/400: Train Loss: 0.5320 (dEdge: 0.5098, Recon: 0.4677) | Valid Loss: 0.3264 | LR: 1.00e-05
+Epoch 204/400: Train Loss: 0.5368 (dEdge: 0.5145, Recon: 0.4677) | Valid Loss: 0.3342 | LR: 1.00e-05
+Epoch 205/400: Train Loss: 0.5316 (dEdge: 0.5094, Recon: 0.4676) | Valid Loss: 0.3470 | LR: 1.00e-05
+Epoch 206/400: Train Loss: 0.5296 (dEdge: 0.5074, Recon: 0.4676) | Valid Loss: 0.3270 | LR: 1.00e-05
+Epoch 207/400: Train Loss: 0.5337 (dEdge: 0.5114, Recon: 0.4676) | Valid Loss: 0.3370 | LR: 1.00e-05
+Epoch 208/400: Train Loss: 0.5340 (dEdge: 0.5117, Recon: 0.4675) | Valid Loss: 0.3334 | LR: 1.00e-05
+Epoch 209/400: Train Loss: 0.5307 (dEdge: 0.5085, Recon: 0.4675) | Valid Loss: 0.3367 | LR: 1.00e-05
+Epoch 210/400: Train Loss: 0.5335 (dEdge: 0.5113, Recon: 0.4675) | Valid Loss: 0.3330 | LR: 1.00e-05
+Epoch 211/400: Train Loss: 0.5300 (dEdge: 0.5078, Recon: 0.4674) | Valid Loss: 0.3258 | LR: 1.00e-05
+Epoch 212/400: Train Loss: 0.5302 (dEdge: 0.5080, Recon: 0.4674) | Valid Loss: 0.3330 | LR: 1.00e-05
+Epoch 213/400: Train Loss: 0.5313 (dEdge: 0.5091, Recon: 0.4675) | Valid Loss: 0.3315 | LR: 1.00e-05
+Epoch 214/400: Train Loss: 0.5326 (dEdge: 0.5103, Recon: 0.4674) | Valid Loss: 0.3373 | LR: 1.00e-05
+Epoch 215/400: Train Loss: 0.5314 (dEdge: 0.5091, Recon: 0.4674) | Valid Loss: 0.3200 | LR: 1.00e-05
+Epoch 216/400: Train Loss: 0.5305 (dEdge: 0.5083, Recon: 0.4675) | Valid Loss: 0.3351 | LR: 1.00e-05
+Epoch 217/400: Train Loss: 0.5326 (dEdge: 0.5103, Recon: 0.4673) | Valid Loss: 0.3377 | LR: 1.00e-05
+Epoch 218/400: Train Loss: 0.5350 (dEdge: 0.5127, Recon: 0.4674) | Valid Loss: 0.3399 | LR: 1.00e-05
+Epoch 219/400: Train Loss: 0.5338 (dEdge: 0.5116, Recon: 0.4674) | Valid Loss: 0.3201 | LR: 1.00e-05
+Epoch 220/400: Train Loss: 0.5334 (dEdge: 0.5112, Recon: 0.4673) | Valid Loss: 0.3274 | LR: 1.00e-05
+Epoch 221/400: Train Loss: 0.5337 (dEdge: 0.5114, Recon: 0.4673) | Valid Loss: 0.3245 | LR: 1.00e-05
+Epoch 222/400: Train Loss: 0.5343 (dEdge: 0.5120, Recon: 0.4672) | Valid Loss: 0.3381 | LR: 1.00e-05
+Epoch 223/400: Train Loss: 0.5317 (dEdge: 0.5094, Recon: 0.4672) | Valid Loss: 0.3387 | LR: 1.00e-05
+Epoch 224/400: Train Loss: 0.5317 (dEdge: 0.5095, Recon: 0.4671) | Valid Loss: 0.3377 | LR: 1.00e-05
+Epoch 225/400: Train Loss: 0.5318 (dEdge: 0.5095, Recon: 0.4673) | Valid Loss: 0.3293 | LR: 1.00e-05
+Epoch 226/400: Train Loss: 0.5314 (dEdge: 0.5091, Recon: 0.4671) | Valid Loss: 0.3312 | LR: 1.00e-05
+Epoch 227/400: Train Loss: 0.5334 (dEdge: 0.5112, Recon: 0.4671) | Valid Loss: 0.3397 | LR: 1.00e-05
+Epoch 228/400: Train Loss: 0.5321 (dEdge: 0.5098, Recon: 0.4671) | Valid Loss: 0.3398 | LR: 1.00e-05
+Epoch 229/400: Train Loss: 0.5315 (dEdge: 0.5093, Recon: 0.4670) | Valid Loss: 0.3366 | LR: 1.00e-05
+Epoch 230/400: Train Loss: 0.5323 (dEdge: 0.5101, Recon: 0.4671) | Valid Loss: 0.3235 | LR: 1.00e-05
+Epoch 231/400: Train Loss: 0.5316 (dEdge: 0.5093, Recon: 0.4670) | Valid Loss: 0.3497 | LR: 1.00e-05
+Epoch 232/400: Train Loss: 0.5332 (dEdge: 0.5110, Recon: 0.4668) | Valid Loss: 0.3224 | LR: 1.00e-05
+Epoch 233/400: Train Loss: 0.5339 (dEdge: 0.5117, Recon: 0.4669) | Valid Loss: 0.3268 | LR: 1.00e-05
+Epoch 234/400: Train Loss: 0.5375 (dEdge: 0.5153, Recon: 0.4669) | Valid Loss: 0.3414 | LR: 1.00e-05
+Epoch 235/400: Train Loss: 0.5311 (dEdge: 0.5089, Recon: 0.4668) | Valid Loss: 0.3379 | LR: 1.00e-05
+Epoch 236/400: Train Loss: 0.5326 (dEdge: 0.5103, Recon: 0.4669) | Valid Loss: 0.3245 | LR: 1.00e-05
+Epoch 237/400: Train Loss: 0.5360 (dEdge: 0.5138, Recon: 0.4668) | Valid Loss: 0.3419 | LR: 1.00e-05
+Epoch 238/400: Train Loss: 0.5351 (dEdge: 0.5128, Recon: 0.4668) | Valid Loss: 0.3293 | LR: 1.00e-05
+Epoch 239/400: Train Loss: 0.5355 (dEdge: 0.5132, Recon: 0.4667) | Valid Loss: 0.3147 | LR: 1.00e-05
+Epoch 240/400: Train Loss: 0.5334 (dEdge: 0.5112, Recon: 0.4668) | Valid Loss: 0.3319 | LR: 1.00e-05
+Epoch 241/400: Train Loss: 0.5312 (dEdge: 0.5090, Recon: 0.4667) | Valid Loss: 0.3259 | LR: 1.00e-05
+Epoch 242/400: Train Loss: 0.5335 (dEdge: 0.5113, Recon: 0.4667) | Valid Loss: 0.3375 | LR: 1.00e-05
+Epoch 243/400: Train Loss: 0.5287 (dEdge: 0.5065, Recon: 0.4667) | Valid Loss: 0.3324 | LR: 1.00e-05
+Epoch 244/400: Train Loss: 0.5327 (dEdge: 0.5105, Recon: 0.4668) | Valid Loss: 0.3158 | LR: 1.00e-05
+Epoch 245/400: Train Loss: 0.5364 (dEdge: 0.5142, Recon: 0.4666) | Valid Loss: 0.3182 | LR: 1.00e-05
+Epoch 246/400: Train Loss: 0.5354 (dEdge: 0.5132, Recon: 0.4665) | Valid Loss: 0.3339 | LR: 1.00e-05
+Epoch 247/400: Train Loss: 0.5353 (dEdge: 0.5131, Recon: 0.4666) | Valid Loss: 0.3434 | LR: 1.00e-05
+Epoch 248/400: Train Loss: 0.5317 (dEdge: 0.5095, Recon: 0.4665) | Valid Loss: 0.3353 | LR: 1.00e-05
+Epoch 249/400: Train Loss: 0.5298 (dEdge: 0.5075, Recon: 0.4667) | Valid Loss: 0.3305 | LR: 1.00e-05
+Epoch 250/400: Train Loss: 0.5342 (dEdge: 0.5119, Recon: 0.4664) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 251/400: Train Loss: 0.5366 (dEdge: 0.5144, Recon: 0.4665) | Valid Loss: 0.3239 | LR: 1.00e-05
+Epoch 252/400: Train Loss: 0.5359 (dEdge: 0.5137, Recon: 0.4665) | Valid Loss: 0.3224 | LR: 1.00e-05
+Epoch 253/400: Train Loss: 0.5324 (dEdge: 0.5102, Recon: 0.4664) | Valid Loss: 0.3240 | LR: 1.00e-05
+Epoch 254/400: Train Loss: 0.5330 (dEdge: 0.5108, Recon: 0.4663) | Valid Loss: 0.3308 | LR: 1.00e-05
+Epoch 255/400: Train Loss: 0.5354 (dEdge: 0.5132, Recon: 0.4663) | Valid Loss: 0.3271 | LR: 1.00e-05
+Epoch 256/400: Train Loss: 0.5306 (dEdge: 0.5083, Recon: 0.4665) | Valid Loss: 0.3292 | LR: 1.00e-05
+Epoch 257/400: Train Loss: 0.5346 (dEdge: 0.5124, Recon: 0.4666) | Valid Loss: 0.3362 | LR: 1.00e-05
+Epoch 258/400: Train Loss: 0.5335 (dEdge: 0.5113, Recon: 0.4663) | Valid Loss: 0.3283 | LR: 1.00e-05
+Epoch 259/400: Train Loss: 0.5344 (dEdge: 0.5122, Recon: 0.4663) | Valid Loss: 0.3283 | LR: 1.00e-05
+Epoch 260/400: Train Loss: 0.5347 (dEdge: 0.5125, Recon: 0.4662) | Valid Loss: 0.3318 | LR: 1.00e-05
+Epoch 261/400: Train Loss: 0.5316 (dEdge: 0.5094, Recon: 0.4662) | Valid Loss: 0.3322 | LR: 1.00e-05
+Epoch 262/400: Train Loss: 0.5352 (dEdge: 0.5130, Recon: 0.4663) | Valid Loss: 0.3346 | LR: 1.00e-05
+Epoch 263/400: Train Loss: 0.5339 (dEdge: 0.5117, Recon: 0.4662) | Valid Loss: 0.3309 | LR: 1.00e-05
+Epoch 264/400: Train Loss: 0.5348 (dEdge: 0.5127, Recon: 0.4661) | Valid Loss: 0.3304 | LR: 1.00e-05
+Epoch 265/400: Train Loss: 0.5304 (dEdge: 0.5082, Recon: 0.4661) | Valid Loss: 0.3228 | LR: 1.00e-05
+Epoch 266/400: Train Loss: 0.5334 (dEdge: 0.5112, Recon: 0.4660) | Valid Loss: 0.3281 | LR: 1.00e-05
+Epoch 267/400: Train Loss: 0.5306 (dEdge: 0.5084, Recon: 0.4661) | Valid Loss: 0.3263 | LR: 1.00e-05
+Epoch 268/400: Train Loss: 0.5335 (dEdge: 0.5113, Recon: 0.4661) | Valid Loss: 0.3374 | LR: 1.00e-05
+Epoch 269/400: Train Loss: 0.5310 (dEdge: 0.5088, Recon: 0.4662) | Valid Loss: 0.3326 | LR: 1.00e-05
+Epoch 270/400: Train Loss: 0.5355 (dEdge: 0.5133, Recon: 0.4661) | Valid Loss: 0.3299 | LR: 1.00e-05
+Epoch 271/400: Train Loss: 0.5334 (dEdge: 0.5112, Recon: 0.4660) | Valid Loss: 0.3355 | LR: 1.00e-05
+Epoch 272/400: Train Loss: 0.5339 (dEdge: 0.5117, Recon: 0.4662) | Valid Loss: 0.3322 | LR: 1.00e-05
+Epoch 273/400: Train Loss: 0.5315 (dEdge: 0.5093, Recon: 0.4660) | Valid Loss: 0.3288 | LR: 1.00e-05
+Epoch 274/400: Train Loss: 0.5331 (dEdge: 0.5109, Recon: 0.4659) | Valid Loss: 0.3304 | LR: 1.00e-05
+Epoch 275/400: Train Loss: 0.5333 (dEdge: 0.5111, Recon: 0.4659) | Valid Loss: 0.3381 | LR: 1.00e-05
+Epoch 276/400: Train Loss: 0.5310 (dEdge: 0.5088, Recon: 0.4659) | Valid Loss: 0.3292 | LR: 1.00e-05
+Epoch 277/400: Train Loss: 0.5337 (dEdge: 0.5115, Recon: 0.4661) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 278/400: Train Loss: 0.5323 (dEdge: 0.5101, Recon: 0.4659) | Valid Loss: 0.3359 | LR: 1.00e-05
+Epoch 279/400: Train Loss: 0.5336 (dEdge: 0.5114, Recon: 0.4659) | Valid Loss: 0.3385 | LR: 1.00e-05
+Epoch 280/400: Train Loss: 0.5355 (dEdge: 0.5133, Recon: 0.4658) | Valid Loss: 0.3301 | LR: 1.00e-05
+Epoch 281/400: Train Loss: 0.5316 (dEdge: 0.5094, Recon: 0.4658) | Valid Loss: 0.3157 | LR: 1.00e-05
+Epoch 282/400: Train Loss: 0.5335 (dEdge: 0.5113, Recon: 0.4656) | Valid Loss: 0.3350 | LR: 1.00e-05
+Epoch 283/400: Train Loss: 0.5308 (dEdge: 0.5086, Recon: 0.4659) | Valid Loss: 0.3285 | LR: 1.00e-05
+Epoch 284/400: Train Loss: 0.5336 (dEdge: 0.5114, Recon: 0.4657) | Valid Loss: 0.3303 | LR: 1.00e-05
+Epoch 285/400: Train Loss: 0.5313 (dEdge: 0.5091, Recon: 0.4656) | Valid Loss: 0.3340 | LR: 1.00e-05
+Epoch 286/400: Train Loss: 0.5329 (dEdge: 0.5107, Recon: 0.4655) | Valid Loss: 0.3210 | LR: 1.00e-05
+Epoch 287/400: Train Loss: 0.5319 (dEdge: 0.5097, Recon: 0.4656) | Valid Loss: 0.3343 | LR: 1.00e-05
+Epoch 288/400: Train Loss: 0.5324 (dEdge: 0.5102, Recon: 0.4657) | Valid Loss: 0.3323 | LR: 1.00e-05
+Epoch 289/400: Train Loss: 0.5329 (dEdge: 0.5108, Recon: 0.4656) | Valid Loss: 0.3320 | LR: 1.00e-05
+Epoch 290/400: Train Loss: 0.5363 (dEdge: 0.5141, Recon: 0.4655) | Valid Loss: 0.3281 | LR: 1.00e-05
+Epoch 291/400: Train Loss: 0.5360 (dEdge: 0.5138, Recon: 0.4655) | Valid Loss: 0.3285 | LR: 1.00e-05
+Epoch 292/400: Train Loss: 0.5314 (dEdge: 0.5092, Recon: 0.4654) | Valid Loss: 0.3335 | LR: 1.00e-05
+Epoch 293/400: Train Loss: 0.5322 (dEdge: 0.5101, Recon: 0.4655) | Valid Loss: 0.3257 | LR: 1.00e-05
+Epoch 294/400: Train Loss: 0.5332 (dEdge: 0.5111, Recon: 0.4655) | Valid Loss: 0.3178 | LR: 1.00e-05
+Epoch 295/400: Train Loss: 0.5334 (dEdge: 0.5112, Recon: 0.4654) | Valid Loss: 0.3308 | LR: 1.00e-05
+Epoch 296/400: Train Loss: 0.5331 (dEdge: 0.5109, Recon: 0.4654) | Valid Loss: 0.3317 | LR: 1.00e-05
+Epoch 297/400: Train Loss: 0.5371 (dEdge: 0.5150, Recon: 0.4653) | Valid Loss: 0.3464 | LR: 1.00e-05
+Epoch 298/400: Train Loss: 0.5288 (dEdge: 0.5066, Recon: 0.4654) | Valid Loss: 0.3376 | LR: 1.00e-05
+Epoch 299/400: Train Loss: 0.5293 (dEdge: 0.5071, Recon: 0.4654) | Valid Loss: 0.3383 | LR: 1.00e-05
+Epoch 300/400: Train Loss: 0.5389 (dEdge: 0.5168, Recon: 0.4654) | Valid Loss: 0.3473 | LR: 1.00e-05
+Epoch 301/400: Train Loss: 0.5291 (dEdge: 0.5069, Recon: 0.4652) | Valid Loss: 0.3336 | LR: 1.00e-05
+Epoch 302/400: Train Loss: 0.5358 (dEdge: 0.5137, Recon: 0.4652) | Valid Loss: 0.3359 | LR: 1.00e-05
+Epoch 303/400: Train Loss: 0.5298 (dEdge: 0.5077, Recon: 0.4654) | Valid Loss: 0.3344 | LR: 1.00e-05
+Epoch 304/400: Train Loss: 0.5323 (dEdge: 0.5102, Recon: 0.4652) | Valid Loss: 0.3366 | LR: 1.00e-05
+Epoch 305/400: Train Loss: 0.5362 (dEdge: 0.5140, Recon: 0.4652) | Valid Loss: 0.3395 | LR: 1.00e-05
+Epoch 306/400: Train Loss: 0.5303 (dEdge: 0.5081, Recon: 0.4652) | Valid Loss: 0.3282 | LR: 1.00e-05
+Epoch 307/400: Train Loss: 0.5319 (dEdge: 0.5098, Recon: 0.4651) | Valid Loss: 0.3287 | LR: 1.00e-05
+Epoch 308/400: Train Loss: 0.5323 (dEdge: 0.5101, Recon: 0.4651) | Valid Loss: 0.3147 | LR: 1.00e-05
+Epoch 309/400: Train Loss: 0.5300 (dEdge: 0.5078, Recon: 0.4652) | Valid Loss: 0.3365 | LR: 1.00e-05
+Epoch 310/400: Train Loss: 0.5341 (dEdge: 0.5120, Recon: 0.4651) | Valid Loss: 0.3306 | LR: 1.00e-05
+Epoch 311/400: Train Loss: 0.5357 (dEdge: 0.5136, Recon: 0.4652) | Valid Loss: 0.3338 | LR: 1.00e-05
+Epoch 312/400: Train Loss: 0.5344 (dEdge: 0.5123, Recon: 0.4650) | Valid Loss: 0.3253 | LR: 1.00e-05
+Epoch 313/400: Train Loss: 0.5313 (dEdge: 0.5092, Recon: 0.4650) | Valid Loss: 0.3296 | LR: 1.00e-05
+Epoch 314/400: Train Loss: 0.5331 (dEdge: 0.5110, Recon: 0.4650) | Valid Loss: 0.3332 | LR: 1.00e-05
+Epoch 315/400: Train Loss: 0.5340 (dEdge: 0.5119, Recon: 0.4651) | Valid Loss: 0.3359 | LR: 1.00e-05
+Epoch 316/400: Train Loss: 0.5344 (dEdge: 0.5123, Recon: 0.4649) | Valid Loss: 0.3232 | LR: 1.00e-05
+Epoch 317/400: Train Loss: 0.5303 (dEdge: 0.5082, Recon: 0.4649) | Valid Loss: 0.3304 | LR: 1.00e-05
+Epoch 318/400: Train Loss: 0.5331 (dEdge: 0.5110, Recon: 0.4648) | Valid Loss: 0.3328 | LR: 1.00e-05
+Epoch 319/400: Train Loss: 0.5299 (dEdge: 0.5078, Recon: 0.4648) | Valid Loss: 0.3352 | LR: 1.00e-05
+Epoch 320/400: Train Loss: 0.5320 (dEdge: 0.5099, Recon: 0.4648) | Valid Loss: 0.3328 | LR: 1.00e-05
+Epoch 321/400: Train Loss: 0.5316 (dEdge: 0.5095, Recon: 0.4648) | Valid Loss: 0.3345 | LR: 1.00e-05
+Epoch 322/400: Train Loss: 0.5350 (dEdge: 0.5128, Recon: 0.4647) | Valid Loss: 0.3274 | LR: 1.00e-05
+Epoch 323/400: Train Loss: 0.5304 (dEdge: 0.5083, Recon: 0.4647) | Valid Loss: 0.3293 | LR: 1.00e-05
+Epoch 324/400: Train Loss: 0.5318 (dEdge: 0.5096, Recon: 0.4649) | Valid Loss: 0.3312 | LR: 1.00e-05
+Epoch 325/400: Train Loss: 0.5317 (dEdge: 0.5096, Recon: 0.4647) | Valid Loss: 0.3386 | LR: 1.00e-05
+Epoch 326/400: Train Loss: 0.5364 (dEdge: 0.5143, Recon: 0.4646) | Valid Loss: 0.3216 | LR: 1.00e-05
+Epoch 327/400: Train Loss: 0.5353 (dEdge: 0.5132, Recon: 0.4647) | Valid Loss: 0.3266 | LR: 1.00e-05
+Epoch 328/400: Train Loss: 0.5328 (dEdge: 0.5107, Recon: 0.4649) | Valid Loss: 0.3190 | LR: 1.00e-05
+Epoch 329/400: Train Loss: 0.5319 (dEdge: 0.5098, Recon: 0.4646) | Valid Loss: 0.3348 | LR: 1.00e-05
+Epoch 330/400: Train Loss: 0.5314 (dEdge: 0.5092, Recon: 0.4647) | Valid Loss: 0.3261 | LR: 1.00e-05
+Epoch 331/400: Train Loss: 0.5367 (dEdge: 0.5146, Recon: 0.4645) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 332/400: Train Loss: 0.5299 (dEdge: 0.5078, Recon: 0.4646) | Valid Loss: 0.3398 | LR: 1.00e-05
+Epoch 333/400: Train Loss: 0.5290 (dEdge: 0.5069, Recon: 0.4646) | Valid Loss: 0.3303 | LR: 1.00e-05
+Epoch 334/400: Train Loss: 0.5335 (dEdge: 0.5114, Recon: 0.4645) | Valid Loss: 0.3358 | LR: 1.00e-05
+Epoch 335/400: Train Loss: 0.5363 (dEdge: 0.5142, Recon: 0.4645) | Valid Loss: 0.3240 | LR: 1.00e-05
+Epoch 336/400: Train Loss: 0.5323 (dEdge: 0.5101, Recon: 0.4645) | Valid Loss: 0.3249 | LR: 1.00e-05
+Epoch 337/400: Train Loss: 0.5333 (dEdge: 0.5112, Recon: 0.4645) | Valid Loss: 0.3329 | LR: 1.00e-05
+Epoch 338/400: Train Loss: 0.5341 (dEdge: 0.5119, Recon: 0.4644) | Valid Loss: 0.3413 | LR: 1.00e-05
+Epoch 339/400: Train Loss: 0.5327 (dEdge: 0.5106, Recon: 0.4645) | Valid Loss: 0.3291 | LR: 1.00e-05
+Epoch 340/400: Train Loss: 0.5327 (dEdge: 0.5106, Recon: 0.4643) | Valid Loss: 0.3331 | LR: 1.00e-05
+Epoch 341/400: Train Loss: 0.5341 (dEdge: 0.5120, Recon: 0.4644) | Valid Loss: 0.3254 | LR: 1.00e-05
+Epoch 342/400: Train Loss: 0.5304 (dEdge: 0.5082, Recon: 0.4643) | Valid Loss: 0.3329 | LR: 1.00e-05
+Epoch 343/400: Train Loss: 0.5340 (dEdge: 0.5119, Recon: 0.4643) | Valid Loss: 0.3283 | LR: 1.00e-05
+Epoch 344/400: Train Loss: 0.5324 (dEdge: 0.5103, Recon: 0.4641) | Valid Loss: 0.3124 | LR: 1.00e-05
+Epoch 345/400: Train Loss: 0.5326 (dEdge: 0.5105, Recon: 0.4643) | Valid Loss: 0.3339 | LR: 1.00e-05
+Epoch 346/400: Train Loss: 0.5317 (dEdge: 0.5096, Recon: 0.4641) | Valid Loss: 0.3256 | LR: 1.00e-05
+Epoch 347/400: Train Loss: 0.5323 (dEdge: 0.5102, Recon: 0.4642) | Valid Loss: 0.3402 | LR: 1.00e-05
+Epoch 348/400: Train Loss: 0.5298 (dEdge: 0.5077, Recon: 0.4643) | Valid Loss: 0.3262 | LR: 1.00e-05
+Epoch 349/400: Train Loss: 0.5307 (dEdge: 0.5086, Recon: 0.4641) | Valid Loss: 0.3326 | LR: 1.00e-05
+Epoch 350/400: Train Loss: 0.5335 (dEdge: 0.5114, Recon: 0.4642) | Valid Loss: 0.3243 | LR: 1.00e-05
+Epoch 351/400: Train Loss: 0.5360 (dEdge: 0.5139, Recon: 0.4643) | Valid Loss: 0.3434 | LR: 1.00e-05
+Epoch 352/400: Train Loss: 0.5367 (dEdge: 0.5146, Recon: 0.4641) | Valid Loss: 0.3433 | LR: 1.00e-05
+Epoch 353/400: Train Loss: 0.5297 (dEdge: 0.5076, Recon: 0.4641) | Valid Loss: 0.3422 | LR: 1.00e-05
+Epoch 354/400: Train Loss: 0.5365 (dEdge: 0.5144, Recon: 0.4641) | Valid Loss: 0.3421 | LR: 1.00e-05
+Epoch 355/400: Train Loss: 0.5298 (dEdge: 0.5077, Recon: 0.4641) | Valid Loss: 0.3306 | LR: 1.00e-05
+Epoch 356/400: Train Loss: 0.5286 (dEdge: 0.5065, Recon: 0.4641) | Valid Loss: 0.3265 | LR: 1.00e-05
+Epoch 357/400: Train Loss: 0.5320 (dEdge: 0.5099, Recon: 0.4639) | Valid Loss: 0.3255 | LR: 1.00e-05
+Epoch 358/400: Train Loss: 0.5309 (dEdge: 0.5088, Recon: 0.4640) | Valid Loss: 0.3293 | LR: 1.00e-05
+Epoch 359/400: Train Loss: 0.5392 (dEdge: 0.5171, Recon: 0.4640) | Valid Loss: 0.3258 | LR: 1.00e-05
+Epoch 360/400: Train Loss: 0.5311 (dEdge: 0.5090, Recon: 0.4639) | Valid Loss: 0.3409 | LR: 1.00e-05
+Epoch 361/400: Train Loss: 0.5375 (dEdge: 0.5154, Recon: 0.4639) | Valid Loss: 0.3292 | LR: 1.00e-05
+Epoch 362/400: Train Loss: 0.5351 (dEdge: 0.5130, Recon: 0.4640) | Valid Loss: 0.3349 | LR: 1.00e-05
+Epoch 363/400: Train Loss: 0.5329 (dEdge: 0.5108, Recon: 0.4639) | Valid Loss: 0.3381 | LR: 1.00e-05
+Epoch 364/400: Train Loss: 0.5333 (dEdge: 0.5112, Recon: 0.4639) | Valid Loss: 0.3305 | LR: 1.00e-05
+Epoch 365/400: Train Loss: 0.5335 (dEdge: 0.5114, Recon: 0.4638) | Valid Loss: 0.3252 | LR: 1.00e-05
+Epoch 366/400: Train Loss: 0.5310 (dEdge: 0.5089, Recon: 0.4638) | Valid Loss: 0.3363 | LR: 1.00e-05
+Epoch 367/400: Train Loss: 0.5283 (dEdge: 0.5063, Recon: 0.4637) | Valid Loss: 0.3350 | LR: 1.00e-05
+Epoch 368/400: Train Loss: 0.5346 (dEdge: 0.5125, Recon: 0.4638) | Valid Loss: 0.3469 | LR: 1.00e-05
+Epoch 369/400: Train Loss: 0.5334 (dEdge: 0.5113, Recon: 0.4637) | Valid Loss: 0.3338 | LR: 1.00e-05
+Epoch 370/400: Train Loss: 0.5286 (dEdge: 0.5066, Recon: 0.4636) | Valid Loss: 0.3325 | LR: 1.00e-05
+Epoch 371/400: Train Loss: 0.5355 (dEdge: 0.5135, Recon: 0.4637) | Valid Loss: 0.3323 | LR: 1.00e-05
+Epoch 372/400: Train Loss: 0.5326 (dEdge: 0.5105, Recon: 0.4636) | Valid Loss: 0.3263 | LR: 1.00e-05
+Epoch 373/400: Train Loss: 0.5294 (dEdge: 0.5073, Recon: 0.4636) | Valid Loss: 0.3163 | LR: 1.00e-05
+Epoch 374/400: Train Loss: 0.5326 (dEdge: 0.5105, Recon: 0.4636) | Valid Loss: 0.3286 | LR: 1.00e-05
+Epoch 375/400: Train Loss: 0.5337 (dEdge: 0.5116, Recon: 0.4635) | Valid Loss: 0.3343 | LR: 1.00e-05
+Epoch 376/400: Train Loss: 0.5333 (dEdge: 0.5112, Recon: 0.4636) | Valid Loss: 0.3178 | LR: 1.00e-05
+Epoch 377/400: Train Loss: 0.5309 (dEdge: 0.5088, Recon: 0.4636) | Valid Loss: 0.3358 | LR: 1.00e-05
+Epoch 378/400: Train Loss: 0.5344 (dEdge: 0.5123, Recon: 0.4633) | Valid Loss: 0.3278 | LR: 1.00e-05
+Epoch 379/400: Train Loss: 0.5326 (dEdge: 0.5106, Recon: 0.4635) | Valid Loss: 0.3330 | LR: 1.00e-05
+Epoch 380/400: Train Loss: 0.5319 (dEdge: 0.5098, Recon: 0.4635) | Valid Loss: 0.3339 | LR: 1.00e-05
+Epoch 381/400: Train Loss: 0.5338 (dEdge: 0.5117, Recon: 0.4635) | Valid Loss: 0.3205 | LR: 1.00e-05
+Epoch 382/400: Train Loss: 0.5317 (dEdge: 0.5096, Recon: 0.4634) | Valid Loss: 0.3440 | LR: 1.00e-05
+Epoch 383/400: Train Loss: 0.5302 (dEdge: 0.5081, Recon: 0.4635) | Valid Loss: 0.3414 | LR: 1.00e-05
+Epoch 384/400: Train Loss: 0.5355 (dEdge: 0.5134, Recon: 0.4634) | Valid Loss: 0.3390 | LR: 1.00e-05
+Epoch 385/400: Train Loss: 0.5322 (dEdge: 0.5101, Recon: 0.4633) | Valid Loss: 0.3405 | LR: 1.00e-05
+Epoch 386/400: Train Loss: 0.5366 (dEdge: 0.5146, Recon: 0.4635) | Valid Loss: 0.3208 | LR: 1.00e-05
+Epoch 387/400: Train Loss: 0.5347 (dEdge: 0.5126, Recon: 0.4633) | Valid Loss: 0.3335 | LR: 1.00e-05
+Epoch 388/400: Train Loss: 0.5317 (dEdge: 0.5096, Recon: 0.4633) | Valid Loss: 0.3218 | LR: 1.00e-05
+Epoch 389/400: Train Loss: 0.5326 (dEdge: 0.5105, Recon: 0.4634) | Valid Loss: 0.3269 | LR: 1.00e-05
+Epoch 390/400: Train Loss: 0.5341 (dEdge: 0.5120, Recon: 0.4633) | Valid Loss: 0.3285 | LR: 1.00e-05
+Epoch 391/400: Train Loss: 0.5315 (dEdge: 0.5095, Recon: 0.4632) | Valid Loss: 0.3345 | LR: 1.00e-05
+Epoch 392/400: Train Loss: 0.5322 (dEdge: 0.5102, Recon: 0.4632) | Valid Loss: 0.3363 | LR: 1.00e-05
+Epoch 393/400: Train Loss: 0.5315 (dEdge: 0.5094, Recon: 0.4630) | Valid Loss: 0.3348 | LR: 1.00e-05
+Epoch 394/400: Train Loss: 0.5297 (dEdge: 0.5076, Recon: 0.4632) | Valid Loss: 0.3322 | LR: 1.00e-05
+Epoch 395/400: Train Loss: 0.5335 (dEdge: 0.5115, Recon: 0.4632) | Valid Loss: 0.3317 | LR: 1.00e-05
+Epoch 396/400: Train Loss: 0.5335 (dEdge: 0.5115, Recon: 0.4632) | Valid Loss: 0.3271 | LR: 1.00e-05
+Epoch 397/400: Train Loss: 0.5326 (dEdge: 0.5105, Recon: 0.4631) | Valid Loss: 0.3245 | LR: 1.00e-05
+Epoch 398/400: Train Loss: 0.5348 (dEdge: 0.5128, Recon: 0.4631) | Valid Loss: 0.3294 | LR: 1.00e-05
+Epoch 399/400: Train Loss: 0.5346 (dEdge: 0.5126, Recon: 0.4629) | Valid Loss: 0.3291 | LR: 1.00e-05
+Epoch 400/400: Train Loss: 0.5338 (dEdge: 0.5117, Recon: 0.4630) | Valid Loss: 0.3466 | LR: 1.00e-05
+
+============================================================
+Training completed!
+Best model from epoch 72/400
+Best validation loss: 0.3055
+Model saved to: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge_gen/v1+2/models/ConditionalGenerator_v1v2_lr_0.001_bs_512.pt
+Training metrics saved to: /dfs9/tw/yuanmis1/mrsec/ML-MD-Peptide/DL_for_Peptide/ML_dEdge_gen/v1+2/data/training_metrics_lr0.001_bs512_ep400_1.csv
+============================================================
+Training completed with parameters:
+Model: ConditionalGenerator
+Architecture: d_model=512, d_ff=2048, n_layers=6, n_heads=8
+Training: epochs=400, batch_size=512, lr=0.001
+Data: Combined iteration1 (v1) and iteration2 (v2)

@@ -1,0 +1,597 @@
+================================================================================
+RL Error Calculation Debug Output
+Generated: 2025-11-17 13:34:12
+================================================================================
+
+Using device: cpu
+
+[1/5] Loading MLE model...
+  MLE model loaded with 82,736,661 parameters
+  dEdge normalization: min=-2.006667, max=3.283333, range=5.290000
+
+[2/5] Loading critic model...
+  Critic model loaded and frozen
+
+[3/5] Creating reverse vocabulary...
+  Vocabulary size: 21
+
+[4/5] Generating 10 test sequences...
+
+  Condition 1: dEdge_norm=0.3485, seq_len=5, dEdge_orig=-0.1632
+  Condition 2: dEdge_norm=0.7909, seq_len=6, dEdge_orig=2.1771
+  Condition 3: dEdge_norm=0.7107, seq_len=5, dEdge_orig=1.7527
+  Condition 4: dEdge_norm=0.3867, seq_len=4, dEdge_orig=0.0392
+  Condition 5: dEdge_norm=0.2072, seq_len=5, dEdge_orig=-0.9106
+  Condition 6: dEdge_norm=0.4153, seq_len=5, dEdge_orig=0.1903
+  Condition 7: dEdge_norm=0.3066, seq_len=4, dEdge_orig=-0.3849
+  Condition 8: dEdge_norm=0.3648, seq_len=5, dEdge_orig=-0.0768
+  Condition 9: dEdge_norm=0.5909, seq_len=4, dEdge_orig=1.1191
+  Condition 10: dEdge_norm=0.5055, seq_len=6, dEdge_orig=0.6673
+
+
+================================================================================
+SEQUENCE 1/10
+================================================================================
+Condition: dEdge_norm=0.3485, seq_len=5
+Target dEdge (original): -0.1632
+
+Generated tokens (full, length 10): [ 1  2  3  9 10 18 17  4  2 18]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 2 = 'C'
+    Position 2: token 3 = 'D'
+    Position 3: token 9 = 'K'
+    Position 4: token 10 = 'L'
+    Position 5: token 18 = 'V'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): CDKLVTECV
+  Length before truncation: 9
+After truncation to target_seq_len=5: CDKLV
+Final decoded sequence length: 5
+
+
+================================================================================
+SEQUENCE 2/10
+================================================================================
+Condition: dEdge_norm=0.7909, seq_len=6
+Target dEdge (original): 2.1771
+
+Generated tokens (full, length 10): [ 1 11  1  1  1  2  1  2  1  2]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 11 = 'M'
+    Position 2: token 1 = 'A'
+    Position 3: token 1 = 'A'
+    Position 4: token 1 = 'A'
+    Position 5: token 2 = 'C'
+    Position 6: token 1 = 'A'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): MAAACACAC
+  Length before truncation: 9
+After truncation to target_seq_len=6: MAAACA
+Final decoded sequence length: 6
+
+
+================================================================================
+SEQUENCE 3/10
+================================================================================
+Condition: dEdge_norm=0.7107, seq_len=5
+Target dEdge (original): 1.7527
+
+Generated tokens (full, length 10): [ 1  1  1  1 14  2  0  2  8  8]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 1 = 'A'
+    Position 2: token 1 = 'A'
+    Position 3: token 1 = 'A'
+    Position 4: token 14 = 'Q'
+    Position 5: token 2 = 'C'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): AAAQCCII
+  Length before truncation: 8
+After truncation to target_seq_len=5: AAAQC
+Final decoded sequence length: 5
+
+
+================================================================================
+SEQUENCE 4/10
+================================================================================
+Condition: dEdge_norm=0.3867, seq_len=4
+Target dEdge (original): 0.0392
+
+Generated tokens (full, length 10): [1 3 6 2 7 2 2 2 4 2]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 3 = 'D'
+    Position 2: token 6 = 'G'
+    Position 3: token 2 = 'C'
+    Position 4: token 7 = 'H'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): DGCHCCCEC
+  Length before truncation: 9
+After truncation to target_seq_len=4: DGCH
+Final decoded sequence length: 4
+
+
+================================================================================
+SEQUENCE 5/10
+================================================================================
+Condition: dEdge_norm=0.2072, seq_len=5
+Target dEdge (original): -0.9106
+
+Generated tokens (full, length 10): [ 1  9  6  2 18 11 11 11  3  2]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 9 = 'K'
+    Position 2: token 6 = 'G'
+    Position 3: token 2 = 'C'
+    Position 4: token 18 = 'V'
+    Position 5: token 11 = 'M'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): KGCVMMMDC
+  Length before truncation: 9
+After truncation to target_seq_len=5: KGCVM
+Final decoded sequence length: 5
+
+
+================================================================================
+SEQUENCE 6/10
+================================================================================
+Condition: dEdge_norm=0.4153, seq_len=5
+Target dEdge (original): 0.1903
+
+Generated tokens (full, length 10): [ 1  3  2  2  9  3 14  8  2 16]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 3 = 'D'
+    Position 2: token 2 = 'C'
+    Position 3: token 2 = 'C'
+    Position 4: token 9 = 'K'
+    Position 5: token 3 = 'D'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): DCCKDQICS
+  Length before truncation: 9
+After truncation to target_seq_len=5: DCCKD
+Final decoded sequence length: 5
+
+
+================================================================================
+SEQUENCE 7/10
+================================================================================
+Condition: dEdge_norm=0.3066, seq_len=4
+Target dEdge (original): -0.3849
+
+Generated tokens (full, length 10): [ 1  2 19 17 10 14 20  2 11  2]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 2 = 'C'
+    Position 2: token 19 = 'W'
+    Position 3: token 17 = 'T'
+    Position 4: token 10 = 'L'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): CWTLQYCMC
+  Length before truncation: 9
+After truncation to target_seq_len=4: CWTL
+Final decoded sequence length: 4
+
+
+================================================================================
+SEQUENCE 8/10
+================================================================================
+Condition: dEdge_norm=0.3648, seq_len=5
+Target dEdge (original): -0.0768
+
+Generated tokens (full, length 10): [ 1 13  8  4  2  4  2  7  2 10]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 13 = 'P'
+    Position 2: token 8 = 'I'
+    Position 3: token 4 = 'E'
+    Position 4: token 2 = 'C'
+    Position 5: token 4 = 'E'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): PIECECHCL
+  Length before truncation: 9
+After truncation to target_seq_len=5: PIECE
+Final decoded sequence length: 5
+
+
+================================================================================
+SEQUENCE 9/10
+================================================================================
+Condition: dEdge_norm=0.5909, seq_len=4
+Target dEdge (original): 1.1191
+
+Generated tokens (full, length 10): [ 1  4  1  2  9  2  2  0  2 20]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 4 = 'E'
+    Position 2: token 1 = 'A'
+    Position 3: token 2 = 'C'
+    Position 4: token 9 = 'K'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): EACKCCCY
+  Length before truncation: 8
+After truncation to target_seq_len=4: EACK
+Final decoded sequence length: 4
+
+
+================================================================================
+SEQUENCE 10/10
+================================================================================
+Condition: dEdge_norm=0.5055, seq_len=6
+Target dEdge (original): 0.6673
+
+Generated tokens (full, length 10): [ 1 15  1 11 12  2  0  2 13  6]
+  Token breakdown:
+    Position 0: token 1 = START token (will be removed)
+    Position 1: token 15 = 'R'
+    Position 2: token 1 = 'A'
+    Position 3: token 11 = 'M'
+    Position 4: token 12 = 'N'
+    Position 5: token 2 = 'C'
+    Position 6: token 0 = 'Empty'
+  Note: Generated 10 tokens total (START + 9 sequence tokens)
+
+After removing START token (position 0): RAMNCCPG
+  Length before truncation: 8
+After truncation to target_seq_len=6: RAMNCC
+Final decoded sequence length: 6
+
+
+✓ Generated 10 sequences
+
+
+================================================================================
+STEP-BY-STEP LOG PROBABILITY COMPUTATION
+================================================================================
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 1
+================================================================================
+Sequence: CDKLV
+Generated tokens: [ 1  2  3  9 10 18 17]
+Target sequence length: 5
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      C        2          -0.760349       0.467503        Position 1 in generated_tokens
+1      D        3          -3.006827       0.049448        Position 2 in generated_tokens
+2      K        9          -3.257733       0.038476        Position 3 in generated_tokens
+3      L        10         -2.183629       0.112632        Position 4 in generated_tokens
+4      V        18         -2.312132       0.099050        Position 5 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -11.520671
+Mean log probability (normalized by length): -2.304134
+Number of tokens: 5
+Note: Mean = sum / length = -11.520671 / 5 = -2.304134
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 2
+================================================================================
+Sequence: MAAACA
+Generated tokens: [ 1 11  1  1  1  2  1  2]
+Target sequence length: 6
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      M        11         -4.357128       0.012815        Position 1 in generated_tokens
+1      A        1          -0.085824       0.917756        Position 2 in generated_tokens
+2      A        1          -0.198896       0.819635        Position 3 in generated_tokens
+3      A        1          -0.339248       0.712306        Position 4 in generated_tokens
+4      C        2          -0.065297       0.936790        Position 5 in generated_tokens
+5      A        1          -1.259417       0.283820        Position 6 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -6.305808
+Mean log probability (normalized by length): -1.050968
+Number of tokens: 6
+Note: Mean = sum / length = -6.305808 / 6 = -1.050968
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 3
+================================================================================
+Sequence: AAAQC
+Generated tokens: [ 1  1  1  1 14  2  0]
+Target sequence length: 5
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      A        1          -1.421122       0.241443        Position 1 in generated_tokens
+1      A        1          -0.241584       0.785383        Position 2 in generated_tokens
+2      A        1          -0.508575       0.601352        Position 3 in generated_tokens
+3      Q        14         -1.433613       0.238446        Position 4 in generated_tokens
+4      C        2          -0.000027       0.999973        Position 5 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -3.604921
+Mean log probability (normalized by length): -0.720984
+Number of tokens: 5
+Note: Mean = sum / length = -3.604921 / 5 = -0.720984
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 4
+================================================================================
+Sequence: DGCH
+Generated tokens: [1 3 6 2 7 2]
+Target sequence length: 4
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      D        3          -3.455390       0.031575        Position 1 in generated_tokens
+1      G        6          -3.396955       0.033475        Position 2 in generated_tokens
+2      C        2          -1.271199       0.280495        Position 3 in generated_tokens
+3      H        7          -0.320967       0.725447        Position 4 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -8.444510
+Mean log probability (normalized by length): -2.111128
+Number of tokens: 4
+Note: Mean = sum / length = -8.444510 / 4 = -2.111128
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 5
+================================================================================
+Sequence: KGCVM
+Generated tokens: [ 1  9  6  2 18 11 11]
+Target sequence length: 5
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      K        9          -2.960351       0.051801        Position 1 in generated_tokens
+1      G        6          -2.728867       0.065293        Position 2 in generated_tokens
+2      C        2          -1.228357       0.292773        Position 3 in generated_tokens
+3      V        18         -2.025827       0.131885        Position 4 in generated_tokens
+4      M        11         -2.419847       0.088935        Position 5 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -11.363251
+Mean log probability (normalized by length): -2.272650
+Number of tokens: 5
+Note: Mean = sum / length = -11.363251 / 5 = -2.272650
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 6
+================================================================================
+Sequence: DCCKD
+Generated tokens: [ 1  3  2  2  9  3 14]
+Target sequence length: 5
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      D        3          -2.093421       0.123265        Position 1 in generated_tokens
+1      C        2          -1.411888       0.243683        Position 2 in generated_tokens
+2      C        2          -5.913617       0.002702        Position 3 in generated_tokens
+3      K        9          -2.339391       0.096386        Position 4 in generated_tokens
+4      D        3          -2.139845       0.117673        Position 5 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -13.898162
+Mean log probability (normalized by length): -2.779632
+Number of tokens: 5
+Note: Mean = sum / length = -13.898162 / 5 = -2.779632
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 7
+================================================================================
+Sequence: CWTL
+Generated tokens: [ 1  2 19 17 10 14]
+Target sequence length: 4
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      C        2          -2.274400       0.102859        Position 1 in generated_tokens
+1      W        19         -1.932186       0.144831        Position 2 in generated_tokens
+2      T        17         -2.814964       0.059907        Position 3 in generated_tokens
+3      L        10         -2.676272       0.068819        Position 4 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -9.697823
+Mean log probability (normalized by length): -2.424456
+Number of tokens: 4
+Note: Mean = sum / length = -9.697823 / 4 = -2.424456
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 8
+================================================================================
+Sequence: PIECE
+Generated tokens: [ 1 13  8  4  2  4  2]
+Target sequence length: 5
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      P        13         -3.393401       0.033594        Position 1 in generated_tokens
+1      I        8          -2.966034       0.051507        Position 2 in generated_tokens
+2      E        4          -1.513537       0.220130        Position 3 in generated_tokens
+3      C        2          -0.015066       0.985047        Position 4 in generated_tokens
+4      E        4          -1.549828       0.212284        Position 5 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -9.437867
+Mean log probability (normalized by length): -1.887573
+Number of tokens: 5
+Note: Mean = sum / length = -9.437867 / 5 = -1.887573
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 9
+================================================================================
+Sequence: EACK
+Generated tokens: [1 4 1 2 9 2]
+Target sequence length: 4
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      E        4          -2.035213       0.130653        Position 1 in generated_tokens
+1      A        1          -2.356416       0.094759        Position 2 in generated_tokens
+2      C        2          -1.397351       0.247251        Position 3 in generated_tokens
+3      K        9          -2.190616       0.111848        Position 4 in generated_tokens
+--------------------------------------------------------------------------------
+Sum of log probabilities: -7.979596
+Mean log probability (normalized by length): -1.994899
+Number of tokens: 4
+Note: Mean = sum / length = -7.979596 / 4 = -1.994899
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+================================================================================
+LOG PROB COMPUTATION FOR SEQUENCE 10
+================================================================================
+Sequence: RAMNCC
+Generated tokens: [ 1 15  1 11 12  2  0  2]
+Target sequence length: 6
+
+Step-by-step log probability computation:
+Step   Token    Token ID   Log Prob        Prob            Note                          
+--------------------------------------------------------------------------------
+0      R        15         -5.799787       0.003028        Position 1 in generated_tokens
+1      A        1          -0.521279       0.593760        Position 2 in generated_tokens
+2      M        11         -1.730443       0.177206        Position 3 in generated_tokens
+3      N        12         -1.877943       0.152904        Position 4 in generated_tokens
+4      C        2          -0.012591       0.987488        Position 5 in generated_tokens
+  Position 6: PAD token (0) - stopping
+--------------------------------------------------------------------------------
+Sum of log probabilities: -9.942043
+Mean log probability (normalized by length): -1.988409
+Number of tokens: 5
+Note: Mean = sum / length = -9.942043 / 5 = -1.988409
+      Using MEAN (not sum) to normalize by sequence length in loss computation.
+
+
+✓ Computed log probabilities for 10 sequences
+
+[6/6] Computing rewards with step-by-step error calculation...
+
+================================================================================
+STEP-BY-STEP dEdge ERROR CALCULATION
+================================================================================
+
+Step 1: Encode generated sequences
+  Generated sequences: ['CDKLV', 'MAAACA', 'AAAQC', 'DGCH', 'KGCVM', 'DCCKD', 'CWTL', 'PIECE', 'EACK', 'RAMNCC']
+  Encoded input shape: torch.Size([10, 10])
+
+Step 2: Predict dEdge using critic model
+  Predicted dEdge (original scale): [ 0.96589804  1.974704    2.3866754   0.37662148 -0.52984715  0.66095924
+ -0.110677    0.7630608   1.3551638   0.9118197 ]
+  Target dEdge (original scale): [-0.16323863  2.177079    1.7527103   0.03918337 -0.9105647   0.19032642
+ -0.38488108 -0.07678491  1.1191077   0.66727257]
+  dEdge normalization params: min=-2.006667, range=5.290000
+
+Step 3: Normalize dEdge values
+  Predicted dEdge (normalized): [0.5619215  0.75262207 0.8304995  0.45052707 0.27917194 0.5042771
+ 0.35841015 0.523578   0.6355067  0.55169874]
+  Target dEdge (normalized): [0.34847412 0.7908782  0.7106573  0.38673913 0.20720264 0.41531062
+ 0.30657575 0.364817   0.5908836  0.5054706 ]
+  Formula: normalized = (original - min) / range
+
+Step 4: Compute MSE (Mean Squared Error)
+  MSE per sequence: [0.04555978 0.00146353 0.01436215 0.0040689  0.00517958 0.00791504
+ 0.00268681 0.02520505 0.00199122 0.00213704]
+  MSE formula: (predicted_norm - target_norm)^2
+    Seq 1: (0.561921 - 0.348474)^2 = 0.213447^2 = 0.045560
+    Seq 2: (0.752622 - 0.790878)^2 = -0.038256^2 = 0.001464
+    Seq 3: (0.830499 - 0.710657)^2 = 0.119842^2 = 0.014362
+    Seq 4: (0.450527 - 0.386739)^2 = 0.063788^2 = 0.004069
+    Seq 5: (0.279172 - 0.207203)^2 = 0.071969^2 = 0.005180
+    Seq 6: (0.504277 - 0.415311)^2 = 0.088966^2 = 0.007915
+    Seq 7: (0.358410 - 0.306576)^2 = 0.051834^2 = 0.002687
+    Seq 8: (0.523578 - 0.364817)^2 = 0.158761^2 = 0.025205
+    Seq 9: (0.635507 - 0.590884)^2 = 0.044623^2 = 0.001991
+    Seq 10: (0.551699 - 0.505471)^2 = 0.046228^2 = 0.002137
+
+Step 5: Compute reward (negative MSE)
+  Reward per sequence: [-0.04555978 -0.00146353 -0.01436215 -0.0040689  -0.00517958 -0.00791504
+ -0.00268681 -0.02520505 -0.00199122 -0.00213704]
+  Reward formula: -MSE (higher is better)
+  Mean reward: -0.011057
+
+Step 6: Absolute error in original scale
+  Absolute error (original): [1.1291367  0.20237494 0.633965   0.3374381  0.38071758 0.47063282
+ 0.27420408 0.8398457  0.23605609 0.24454713]
+  Mean absolute error: 0.474892
+
+
+================================================================================
+SUMMARY
+================================================================================
+Seq   Sequence        Length   Mean LogProb    Target dEdge    Pred dEdge      Abs Error       Reward         
+----------------------------------------------------------------------------------------------------
+1     CDKLV           5        -2.304134       -0.163239       0.965898        1.129137        -0.045560      
+2     MAAACA          6        -1.050968       2.177079        1.974704        0.202375        -0.001464      
+3     AAAQC           5        -0.720984       1.752710        2.386675        0.633965        -0.014362      
+4     DGCH            4        -2.111128       0.039183        0.376621        0.337438        -0.004069      
+5     KGCVM           5        -2.272650       -0.910565       -0.529847       0.380718        -0.005180      
+6     DCCKD           5        -2.779632       0.190326        0.660959        0.470633        -0.007915      
+7     CWTL            4        -2.424456       -0.384881       -0.110677       0.274204        -0.002687      
+8     PIECE           5        -1.887573       -0.076785       0.763061        0.839846        -0.025205      
+9     EACK            4        -1.994899       1.119108        1.355164        0.236056        -0.001991      
+10    RAMNCC          6        -1.988409       0.667273        0.911820        0.244547        -0.002137      
+----------------------------------------------------------------------------------------------------
+Mean log_prob (normalized by length): -1.953483
+Mean absolute error: 0.474892
+Mean reward: -0.011057
+Mean MSE (normalized): 0.011057
+
+
+================================================================================
+HOW LOSS WOULD BE COMPUTED (for reference)
+================================================================================
+Loss formula: -E[log_prob * (reward - baseline)]
+Where:
+  - log_prob = MEAN of log probabilities over sequence length (normalized)
+  - reward = -MSE(predicted_dEdge_norm, target_dEdge_norm)
+  - baseline = mean reward (for variance reduction)
+  - Note: Using MEAN instead of SUM normalizes by sequence length
+
+Baseline (mean reward): -0.011057
+
+Seq   Mean LogProb    Reward          Advantage       log_prob*adv   
+--------------------------------------------------------------------------------
+1     -2.304134       -0.045560       -0.034503       0.079499       
+2     -1.050968       -0.001464       0.009593        -0.010082      
+3     -0.720984       -0.014362       -0.003305       0.002383       
+4     -2.111128       -0.004069       0.006988        -0.014753      
+5     -2.272650       -0.005180       0.005877        -0.013357      
+6     -2.779632       -0.007915       0.003142        -0.008733      
+7     -2.424456       -0.002687       0.008370        -0.020293      
+8     -1.887573       -0.025205       -0.014148       0.026706       
+9     -1.994899       -0.001991       0.009066        -0.018085      
+10    -1.988409       -0.002137       0.008920        -0.017736      
+--------------------------------------------------------------------------------
+Mean (log_prob * advantage): 0.000555
+Loss would be: -0.000555
+
+Note: Using MEAN log_prob (normalized by sequence length) instead of SUM
+      This ensures sequences of different lengths contribute equally to the loss.
+
+
+================================================================================
+Debug output complete.
+================================================================================
